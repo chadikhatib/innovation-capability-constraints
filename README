@@ -1,0 +1,178 @@
+================================================================================
+README
+================================================================================
+Overview
+
+This repository contains the complete analytical code, de-identified dataset, and supplementary materials for the manuscript:
+
+When Knowledge Does Not Translate into Practice: Innovation Readiness as a Missing Capability Layer in Constrained Pharmaceutical Systems
+
+================================================================================
+CRITICAL ALIGNMENT STATEMENT (SAP + MANUSCRIPT + STROBE)
+================================================================================
+
+All analyses, variables, transformations, and statistical procedures in this repository:
+
+STRICTLY FOLLOW SAP v1.0.
+
+Specifically:
+
+No BCa bootstrap methods were used
+All confidence intervals for correlations are computed using Fisher z-transformation only
+No random seed dependency is used or required
+Nested model comparison follows ΔR² + ΔAIC + ΔBIC framework with F-change test reported as auxiliary inference only
+All effect sizes follow predefined SAP hierarchy (η², f², Cohen’s d, r)
+All variables are treated as formative composite indices (non-latent constructs)
+================================================================================
+REPRODUCIBILITY GUARANTEE
+================================================================================
+
+This project is fully reproducible under the following conditions:
+
+Python 3.12+
+Fixed package versions defined in requirements.txt
+Deterministic execution ensured via fixed environment specification (no stochastic procedures requiring seeds)
+All preprocessing steps are explicitly encoded in Innovation_Capability_Analysis.py
+
+No hidden preprocessing, no external transformations, and no manual post-hoc adjustments were applied.
+
+================================================================================
+REPOSITORY STRUCTURE
+================================================================================
+.
+├── README.md
+├── CITATION.cff
+├── LICENSE (MIT)
+├── requirements.txt
+│
+├── data/
+│   └── Deidentified_Dataset_N303.csv
+│
+├── code/
+│   └── Innovation_Capability_Analysis.py
+│
+├── supplementary/
+│   ├── Table_S1_Participant_Flow.txt
+│   ├── Table_S2_Demographics.txt
+│   ├── Table_S3_Item_Level_Stats.txt
+│   ├── Table_S4_Correlation_Matrix.txt
+│   ├── Table_S5_ANOVA_PostHoc.txt
+│   ├── Table_S6_Regression_Diagnostics.txt
+│   ├── Table_S7_Sensitivity_Analyses.txt
+│   ├── Table_S8_Convergent_Validity.txt
+│   └── Table_S9_Item_Distributions.txt
+│
+└── documentation/
+    └── Analysis_Documentation_Record.pdf
+================================================================================
+DATA DESCRIPTION
+================================================================================
+Dataset: Deidentified_Dataset_N303.csv
+N = 303 pharmaceutical professionals
+Data collection period: 10 March – 15 April 2026
+Format: CSV (40 variables)
+Fully de-identified prior to analysis
+Missing Data Handling Rule (IMPORTANT)
+Missing values encoded as “2” (Gender) were treated as NA
+No imputation was performed
+Complete-case analysis was used for regression models only
+All exclusions are explicitly documented in Supplementary Table S1
+Variable Dictionary (Core Constructs)
+Variable	Description	Type	Range
+PILS	IP literacy composite	Continuous	0–100
+IAI	IP attitude index	Continuous	0–100
+IRS	Innovation readiness score	Continuous	0–100
+IPI	Innovation practice index	Continuous	0–100
+Diagnostic_Gap	IAI − IPI	Continuous	-40 to 94
+
+All indices are formative composite indicators, not reflective latent constructs.
+
+================================================================================
+MEASUREMENT MODEL STATEMENT (CRITICAL)
+================================================================================
+
+All constructs are operationalized as formative composites:
+
+Inter-item homogeneity is NOT assumed
+Internal consistency metrics (KR-20, Cronbach’s α) are reported for transparency only
+These metrics are NOT used as validity criteria
+Construct validity is evaluated via theoretical specification and empirical pattern coherence
+
+(Coltman et al., 2008; Hanafiah, 2020)
+
+================================================================================
+STATISTICAL ANALYSIS IMPLEMENTATION
+================================================================================
+
+All analyses implemented in:
+
+code/Innovation_Capability_Analysis.py
+Methods include:
+Descriptive statistics (mean, SD, skewness, kurtosis)
+Pearson correlations with Fisher z-based 95% CIs
+One-way ANOVA + Tukey HSD
+OLS regression with HC3 robust standard errors
+Standardized coefficients (β*)
+Partial R² estimation
+Multicollinearity diagnostics (VIF)
+Residual diagnostics:
+Shapiro-Wilk
+Breusch-Pagan
+Durbin-Watson
+Sensitivity analyses (5 alternative specifications)
+================================================================================
+NESTED MODEL COMPARISON (IMPORTANT CLARIFICATION)
+================================================================================
+ΔR², ΔAIC, and ΔBIC are used as descriptive model comparison metrics
+F-change test is reported as a supporting diagnostic, not a causal inference tool
+No structural or causal interpretation is permitted from these comparisons
+================================================================================
+OUTPUTS GENERATED AUTOMATICALLY
+================================================================================
+
+Running the script produces:
+
+Table S2: Descriptive statistics
+Table S4: Correlation matrix (Fisher z CI)
+Table S5: Regression + ANOVA results
+Table S6: Diagnostics
+Table S7: Sensitivity analyses
+Table S8: Convergent validity
+Table S9: Distributional properties
+================================================================================
+ETHICS AND COMPLIANCE
+================================================================================
+IRB Approval: Manara University (MU-URO-26-02)
+Declaration of Helsinki: Fully adhered to
+Informed consent: Obtained from all participants
+Data anonymization: Fully applied prior to analysis
+No competing interests declared
+No external funding reported
+================================================================================
+DATA AND CODE AVAILABILITY
+================================================================================
+De-identified dataset included in /data
+Full analysis code included in /code
+Supplementary outputs included in /supplementary
+Documentation record included in /documentation
+
+All materials are sufficient to fully reproduce all reported results.
+
+================================================================================
+CITATION
+================================================================================
+
+If you use this repository, please cite:
+
+@article{alkhatib2026innovation,
+  title={Innovation readiness as a missing capability layer in knowledge--practice decoupling under institutional constraints: evidence from a transitional pharmaceutical system},
+  author={[Author names withheld for peer review]},
+  journal={Research Policy},
+  year={2026},
+  volume={TBD},
+  pages={TBD},
+  doi={TBD (reserved or Zenodo DOI)}
+}
+================================================================================
+
+
