@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this dataset or code, please cite both the article and the dataset."
+type: dataset
+title: "Innovation Capability under Institutional Constraints: De-identified Dataset and Analysis Code"
+authors:
+  - family-names: "[Withheld]"
+    given-names: "[For peer review]"
+date-released: 2026-06-14
+version: 1.0.0
+license: MIT
+doi: 10.5281/zenodo.placeholder
+repository-code: "https://github.com/[placeholder]/innovation-capability-constraints"
+keywords:
+  - innovation systems
+  - intellectual property literacy
+  - innovation readiness
+  - pharmaceutical innovation
+  - institutional constraints
+  - transitional economies
+  - cross-sectional analysis
+  - knowledge-attitude-practice
