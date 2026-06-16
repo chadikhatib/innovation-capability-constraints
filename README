@@ -1,55 +1,25 @@
-================================================================================
-README
-================================================================================
-Overview
-
-This repository contains the complete analytical code, de-identified dataset, and supplementary materials for the manuscript:
-
+Innovation Capability Analysis — PIPRF v1.0
 When Knowledge Does Not Translate into Practice: Innovation Readiness as a Missing Capability Layer in Constrained Pharmaceutical Systems
-
-================================================================================
-CRITICAL ALIGNMENT STATEMENT (SAP + MANUSCRIPT + STROBE)
-================================================================================
-
-All analyses, variables, transformations, and statistical procedures in this repository:
-
-STRICTLY FOLLOW SAP v1.0.
-
-Specifically:
-
-No BCa bootstrap methods were used
-All confidence intervals for correlations are computed using Fisher z-transformation only
-No random seed dependency is used or required
-Nested model comparison follows ΔR² + ΔAIC + ΔBIC framework with F-change test reported as auxiliary inference only
-All effect sizes follow predefined SAP hierarchy (η², f², Cohen’s d, r)
-All variables are treated as formative composite indices (non-latent constructs)
-================================================================================
-REPRODUCIBILITY GUARANTEE
-================================================================================
-
-This project is fully reproducible under the following conditions:
-
-Python 3.12+
-Fixed package versions defined in requirements.txt
-Deterministic execution ensured via fixed environment specification (no stochastic procedures requiring seeds)
-All preprocessing steps are explicitly encoded in Innovation_Capability_Analysis.py
-
-No hidden preprocessing, no external transformations, and no manual post-hoc adjustments were applied.
-
-================================================================================
-REPOSITORY STRUCTURE
-================================================================================
-.
-├── README.md
-├── CITATION.cff
-├── LICENSE (MIT)
-├── requirements.txt
+________________________________________
+📋 Overview
+This repository contains the complete analytical code, de-identified dataset, and supplementary materials for a cross-sectional study of 303 pharmaceutical professionals examining the co-variation structure among IP literacy, innovation attitudes, innovation readiness, and reported innovation practice in a transitional pharmaceutical system.
+Target Journal: Research Policy / Nature Human Behaviour / Technovation
+Study Design: Cross-sectional observational survey
+Data Collection: 10 March – 15 April 2026
+Ethics Approval: Manara University (MU-URO-26-02)
+________________________________________
+🗂️ Repository Structure
+innovation-capability-constraints/
+├── README.md                           ← This file
+├── CITATION.cff                        ← Citation metadata
+├── LICENSE                             ← MIT License
+├── requirements.txt                    ← Python dependencies
 │
 ├── data/
-│   └── Deidentified_Dataset_N303.csv
+│   └── Deidentified_Dataset_N303.csv   ← De-identified dataset (N=303)
 │
 ├── code/
-│   └── Innovation_Capability_Analysis.py
+│   └── Innovation_Capability_Analysis.py  ← Complete analysis script
 │
 ├── supplementary/
 │   ├── Table_S1_Participant_Flow.txt
@@ -63,116 +33,107 @@ REPOSITORY STRUCTURE
 │   └── Table_S9_Item_Distributions.txt
 │
 └── documentation/
-    └── Analysis_Documentation_Record.pdf
-================================================================================
-DATA DESCRIPTION
-================================================================================
+    ├── SAP_STATISTICAL_ANALYSIS_PLAN_v1.0.txt
+    ├── STROBE_CHECKLIST_v1.1_FINAL.txt
+    └── SUPPLEMENTARY_MATERIALS_INDEX.txt
+________________________________________
+📊 Data Description
 Dataset: Deidentified_Dataset_N303.csv
-N = 303 pharmaceutical professionals
-Data collection period: 10 March – 15 April 2026
-Format: CSV (40 variables)
-Fully de-identified prior to analysis
-Missing Data Handling Rule (IMPORTANT)
-Missing values encoded as “2” (Gender) were treated as NA
-No imputation was performed
-Complete-case analysis was used for regression models only
-All exclusions are explicitly documented in Supplementary Table S1
-Variable Dictionary (Core Constructs)
-Variable	Description	Type	Range
-PILS	IP literacy composite	Continuous	0–100
-IAI	IP attitude index	Continuous	0–100
-IRS	Innovation readiness score	Continuous	0–100
-IPI	Innovation practice index	Continuous	0–100
-Diagnostic_Gap	IAI − IPI	Continuous	-40 to 94
-
-All indices are formative composite indicators, not reflective latent constructs.
-
-================================================================================
-MEASUREMENT MODEL STATEMENT (CRITICAL)
-================================================================================
-
-All constructs are operationalized as formative composites:
-
-Inter-item homogeneity is NOT assumed
-Internal consistency metrics (KR-20, Cronbach’s α) are reported for transparency only
-These metrics are NOT used as validity criteria
-Construct validity is evaluated via theoretical specification and empirical pattern coherence
-
-(Coltman et al., 2008; Hanafiah, 2020)
-
-================================================================================
-STATISTICAL ANALYSIS IMPLEMENTATION
-================================================================================
-
-All analyses implemented in:
-
-code/Innovation_Capability_Analysis.py
-Methods include:
-Descriptive statistics (mean, SD, skewness, kurtosis)
-Pearson correlations with Fisher z-based 95% CIs
-One-way ANOVA + Tukey HSD
-OLS regression with HC3 robust standard errors
-Standardized coefficients (β*)
-Partial R² estimation
-Multicollinearity diagnostics (VIF)
-Residual diagnostics:
-Shapiro-Wilk
-Breusch-Pagan
-Durbin-Watson
-Sensitivity analyses (5 alternative specifications)
-================================================================================
-NESTED MODEL COMPARISON (IMPORTANT CLARIFICATION)
-================================================================================
-ΔR², ΔAIC, and ΔBIC are used as descriptive model comparison metrics
-F-change test is reported as a supporting diagnostic, not a causal inference tool
-No structural or causal interpretation is permitted from these comparisons
-================================================================================
-OUTPUTS GENERATED AUTOMATICALLY
-================================================================================
-
-Running the script produces:
-
-Table S2: Descriptive statistics
-Table S4: Correlation matrix (Fisher z CI)
-Table S5: Regression + ANOVA results
-Table S6: Diagnostics
-Table S7: Sensitivity analyses
-Table S8: Convergent validity
-Table S9: Distributional properties
-================================================================================
-ETHICS AND COMPLIANCE
-================================================================================
-IRB Approval: Manara University (MU-URO-26-02)
-Declaration of Helsinki: Fully adhered to
-Informed consent: Obtained from all participants
-Data anonymization: Fully applied prior to analysis
-No competing interests declared
-No external funding reported
-================================================================================
-DATA AND CODE AVAILABILITY
-================================================================================
-De-identified dataset included in /data
-Full analysis code included in /code
-Supplementary outputs included in /supplementary
-Documentation record included in /documentation
-
-All materials are sufficient to fully reproduce all reported results.
-
-================================================================================
-CITATION
-================================================================================
-
+•	N = 303 pharmaceutical professionals
+•	Format: CSV (40 variables)
+•	IDs: Synthetic participant IDs (P001–P303)
+•	De-identification: All personal identifiers removed prior to analysis
+Core Constructs
+Variable	Description	Type	Range	Items
+PILS	Pharmaceutical IP Literacy Score	Continuous	0–100	9 binary (K2–K10)
+IAI	IP Attitude Index	Continuous	0–100	10 Likert (A1–A10)
+IRS	Innovation Readiness Score	Continuous	0–100	4 binary (R1–R4)
+IPI	Innovation Practice Index	Continuous	0–100	3 binary (P1–P3)
+Diagnostic_Gap	IAI − IPI (descriptive)	Continuous	−40 to 94	—
+Covariates
+•	Gender (Male/Female/Missing)
+•	Professional category (Pharmacist/Student/Academic)
+•	Experience level (<1, 1–5, 6–10, >10 years)
+Missing Data Handling
+•	Missing values encoded as “2” (Gender) treated as NA
+•	No imputation performed
+•	Complete-case analysis for regression models
+•	One participant (0.3%) excluded from gender-stratified analyses only
+________________________________________
+🔬 Measurement Model Statement
+All constructs are formative composite indicators, not reflective latent scales.
+•	Inter-item homogeneity is NOT assumed
+•	Internal consistency metrics (KR-20, Cronbach’s α) are reported for transparency only
+•	These metrics are NOT used as validity criteria
+•	Construct validity is evaluated via theoretical specification and empirical pattern coherence
+References: Coltman et al. (2008); Hanafiah (2020)
+________________________________________
+🚀 Quick Start
+1. Clone the Repository
+git clone https://github.com/chadikhatib/innovation-capability-constraints.git
+cd innovation-capability-constraints
+2. Install Dependencies
+pip install -r requirements.txt
+Required packages: - Python 3.12+ - pandas ≥ 2.0.0 - numpy ≥ 1.24.0 - scipy ≥ 1.10.0 - statsmodels ≥ 0.14.0 - matplotlib ≥ 3.7.0 - seaborn ≥ 0.12.0
+3. Run the Analysis
+python code/Innovation_Capability_Analysis.py \
+  --data data/Deidentified_Dataset_N303.csv \
+  --output results/
+4. Outputs Generated
+Running the script produces: - S2_descriptive_stats.csv - S4_correlation_matrix.csv - S5_specification_A.csv - S5_specification_B.csv
+________________________________________
+📈 Statistical Analysis Summary
+Analysis	Method	Key Output
+Descriptive statistics	Mean, SD, skewness, kurtosis	Table S2
+Correlations	Pearson r + Fisher z 95% CIs	Table S4
+Group comparisons	One-way ANOVA + Tukey HSD	Table S5
+Regression	OLS with HC3 robust SE	Table S6
+Nested comparison	ΔR², ΔAIC, ΔBIC + F-change	Table S6
+Diagnostics	VIF, Shapiro-Wilk, Breusch-Pagan, Durbin-Watson	Table S6
+Sensitivity	5 alternative specifications	Table S7
+Convergent validity	Q10 vs PILS (Mann-Whitney U)	Table S8
+________________________________________
+⚠️ Critical Alignment Statement
+All analyses strictly follow SAP v1.0:
+•	✅ No BCa bootstrap methods — Fisher z-transformation only
+•	✅ No random seed dependency
+•	✅ Nested model comparison: ΔR² + ΔAIC + ΔBIC framework
+•	✅ All effect sizes follow predefined SAP hierarchy (η², f², Cohen’s d, r)
+•	✅ All variables treated as formative composite indices (non-latent)
+________________________________________
+📜 Ethics and Compliance
+•	IRB Approval: Manara University (MU-URO-26-02)
+•	Declaration of Helsinki: Fully adhered to
+•	Informed Consent: Obtained from all participants
+•	Data Anonymization: Fully applied prior to analysis
+•	No competing interests declared
+•	No external funding reported
+________________________________________
+📚 Citation
 If you use this repository, please cite:
-
-@article{alkhatib2026innovation,
-  title={Innovation readiness as a missing capability layer in knowledge--practice decoupling under institutional constraints: evidence from a transitional pharmaceutical system},
-  author={[Author names withheld for peer review]},
-  journal={Research Policy},
+@dataset{alkhatib2026pibrf,
+  title={Innovation Capability under Institutional Constraints: 
+         De-identified Dataset and Analysis Code},
+  author={Khatib, Chadi and Alkozy, Hala and Hamdan, Zainab and 
+          Isber, May and Mlhem, Jawa},
   year={2026},
-  volume={TBD},
-  pages={TBD},
-  doi={TBD (reserved or Zenodo DOI)}
+  publisher={Zenodo},
+  version={v2.3.4},
+  doi={10.5281/zenodo.20716883},
+  url={https://doi.org/10.5281/zenodo.20716883}
 }
-================================================================================
+________________________________________
+📄 License
+This project is licensed under the MIT License — see the LICENSE file for details.
+________________________________________
+🔗 Links
+•	GitHub Repository: https://github.com/chadikhatib/innovation-capability-constraints
+•	Zenodo Archive: https://doi.org/10.5281/zenodo.20716883
+•	Manuscript: [Submitted — peer review pending]
+________________________________________
+🙏 Acknowledgments
+The authors gratefully acknowledge the institutional support of Manara University, the Syrian Pharmacists Syndicate, and all study volunteers who participated on a voluntary basis.
+________________________________________
+Last Updated: 2026-06-16 | Version: 1.0.0 | Zenodo: v2.3.4 | DOI: 10.5281/zenodo.20716883 | Status: Published
 
 
