@@ -1,0 +1,123 @@
+================================================================================
+SUPPLEMENTARY MATERIALS INDEX
+When Knowledge Does Not Translate into Practice: Innovation Readiness as a Missing Capability Layer in Constrained Pharmaceutical Systems
+================================================================================
+
+Date: 2026-06-14
+Version: 1.0.0
+================================================================================
+PACKAGE CONTENTS
+================================================================================
+
+1. SUPPLEMENTARY TABLES (S1–S9)
+────────────────────────────────────────────────────────────────────────────────
+
+Table S1: Participant Flow Diagram (STROBE-compliant)
+   → Recruitment, eligibility, complete responses, missing data
+   → File: Supplementary_Tables/Table_S1.txt
+
+Table S2: Demographic and Professional Characteristics (N = 303)
+   → Gender, age, professional category, experience, employment, geography
+   → File: Supplementary_Tables/Table_S2.txt
+
+Table S3: Item-Level Descriptive Statistics
+   → All 26 items (K2–K10, A1–A10, R1–R4, P1–P3) with means, SDs
+   → File: Supplementary_Tables/Table_S3.txt
+
+Table S4: Inter-Domain Pearson Correlations with 95% Confidence Intervals
+   → Pearson r with BCa confidence intervals (10,000 resamples)
+   → File: Supplementary_Tables/Table_S4.txt
+
+Table S5: ANOVA Post-Hoc Comparisons (Tukey HSD)
+   → Pairwise comparisons with Cohen's d effect sizes
+   → File: Supplementary_Tables/Table_S5.txt
+
+Table S6: Regression Diagnostics and Nested Model Comparison
+   → R², RMSE, F-statistic, Durbin-Watson, Breusch-Pagan, Shapiro-Wilk
+   → File: Supplementary_Tables/Table_S6.txt
+
+Table S7: Sensitivity Analysis Results
+   → Outlier exclusion, alternative SE estimators, non-parametric alternatives
+   → File: Supplementary_Tables/Table_S7.txt
+
+Table S8: Convergent Validity: Self-Assessment (Q10) vs PILS
+   → Self-assessed vs objective knowledge comparison
+   → File: Supplementary_Tables/Table_S8.txt
+
+
+2. ANALYSIS CODE
+────────────────────────────────────────────────────────────────────────────────
+
+Innovation_Capability_Analysis.py
+   → Complete Python 3.12+ script for all analyses
+   → Functions: descriptive stats, correlations, ANOVA, regression, 
+     nested comparison, sensitivity, convergent validity
+   → File: Supplementary_Code/Innovation_Capability_Analysis.py
+
+3. DE-IDENTIFIED DATASET
+────────────────────────────────────────────────────────────────────────────────
+
+Deidentified_Dataset_N303.csv
+   → N = 303, 40 variables
+   → All item-level data + composite scores + demographics
+   → Synthetic participant IDs (no identifying information)
+   → File: Supplementary_Data/Deidentified_Dataset_N303.csv
+
+4. REPOSITORY FILES
+────────────────────────────────────────────────────────────────────────────────
+
+README.md
+   → Complete documentation for GitHub repository
+   → Variable dictionary, usage instructions, ethics statement
+   → File: README.md
+
+CITATION.cff
+   → Citation metadata for dataset and code
+   → File: CITATION.cff
+
+LICENSE
+   → MIT License (open source)
+   → File: LICENSE
+
+================================================================================
+DEPOSIT INSTRUCTIONS
+================================================================================
+
+GitHub Repository:
+   1. Create repository: innovation-capability-constraints
+   2. Upload all files listed above
+   3. Add DOI badge after Zenodo integration
+   4. Enable GitHub Actions for reproducibility (optional)
+
+Zenodo Archive:
+   1. Link GitHub repository to Zenodo
+   2. Create release v1.0.0
+   3. Zenodo automatically generates DOI
+   4. Update CITATION.cff and README.md with DOI
+
+Data Availability Statement (for manuscript):
+   "The datasets generated and analyzed during the current study, along with 
+   the statistical analysis code and documentation record, are available 
+   in the public GitHub repository [URL] and archived on Zenodo [DOI]. 
+   The de-identified dataset (N=303) is provided in CSV format with synthetic 
+   participant IDs. All analysis code is released under the MIT License."
+
+================================================================================
+QUALITY ASSURANCE CHECKLIST
+================================================================================
+
+✓ All data de-identified (no personal information)
+✓ Synthetic participant IDs (P001–P303)
+✓ Complete variable dictionary provided
+✓ Analysis code documented with docstrings
+✓ Reproducible environment specified (Python 3.12+)
+✓ All dependencies listed (requirements.txt)
+✓ Ethics approval documented (MU-URO-26-02)
+✓ License specified (MIT)
+✓ Citation metadata provided (CITATION.cff)
+✓ README with usage instructions
+✓ Zenodo-ready (DOI placeholder)
+
+================================================================================
+END OF INDEX
+================================================================================
