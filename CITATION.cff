@@ -3,8 +3,26 @@ message: "If you use this dataset or code, please cite both the article and the 
 type: dataset
 title: "Innovation Capability under Institutional Constraints: De-identified Dataset and Analysis Code"
 authors:
-  - family-names: "[Withheld]"
-    given-names: "[For peer review]"
+  - family-names: "Khatib"
+    given-names: "Chadi"
+    affiliation: "Faculty of Pharmacy, Manara University, Syria"
+    orcid: "https://orcid.org/0000-0000-0000-0000"  # ← أضف ORCID إن وجد
+
+  - family-names: "Alkozy"
+    given-names: "Hala"
+    affiliation: "Faculty of Pharmacy, Manara University, Syria"
+
+  - family-names: "Hamdan"
+    given-names: "Zainab"
+    affiliation: "Faculty of Pharmacy, Manara University, Syria"
+
+  - family-names: "Isber"
+    given-names: "May"
+    affiliation: "Faculty of Pharmacy, Manara University, Syria"
+
+  - family-names: "Mlhem"
+    given-names: "Jawa"
+    affiliation: "Faculty of Pharmacy, Manara University, Syria"
 date-released: 2026-06-14
 version: 1.0.0
 license: MIT
