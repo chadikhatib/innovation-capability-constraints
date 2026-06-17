@@ -17,7 +17,7 @@ Reproducibility package accompanying:
 Innovation Practice in Syria's Pharmaceutical Sector:
 A Cross-Sectional Study"
 
-Author: Chadi I. Khatib et al.
+Author: Chadi Khatib et al.
 License: MIT
 ================================================================================
 
