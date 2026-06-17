@@ -1,15 +1,25 @@
 # Python
-__pycache__/
+
+**pycache**/
 *.py[cod]
+*.pyo
+*.pyd
 *$py.class
 *.so
 .Python
+
+# Virtual environments
+
 env/
 venv/
 ENV/
+.venv/
+
+# Build / packaging
+
 build/
-develop-eggs/
 dist/
+develop-eggs/
 downloads/
 eggs/
 .eggs/
@@ -23,34 +33,57 @@ wheels/
 .installed.cfg
 *.egg
 
-# Jupyter Notebook
-.ipynb_checkpoints
+# Jupyter
 
-# PyCharm / VSCode
+.ipynb_checkpoints/
+
+# IDEs
+
 .idea/
 .vscode/
 *.swp
 *.swo
 *~
 
-# OS
-.DS_Store
-Thumbs.db
+# Testing / coverage
 
-# Results (generated, not version-controlled)
-results/
-*.png
-*.jpg
-*.pdf
+.pytest_cache/
+.coverage
+htmlcov/
 
-# Data backups
-*.bak
-*.backup
+# Logs
 
-# Environment
+*.log
+logs/
+
+# Environment variables
+
 .env
 .env.local
 
-# Large files
+# Operating systems
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Generated outputs
+
+results/
+outputs/
+
+# Temporary backups
+
+*.bak
+*.backup
+
+# Large archives
+
 *.zip
 *.tar.gz
+
+# Local raw data (never commit)
+
+raw_data/
+original_data/
