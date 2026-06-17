@@ -1,9 +1,9 @@
 ================================================================================
-STATISTICAL ANALYSIS PLAN (SAP) — VERSION 2.1
-When Knowledge Does Not Translate into Practice: Innovation Readiness as a Missing Capability Layer in Constrained Pharmaceutical Systems
+STATISTICAL ANALYSIS PLAN (SAP) — VERSION 1.0
+Intellectual Property Literacy, Innovation Readiness and Innovation Practice in Syria's Pharmaceutical Sector: A Cross-Sectional Study
 ================================================================================
 
-Document ID: SAP-PIPRF-2026-001
+Document ID: SAP-2026-001
 Version: 1.0
 Date: 2026-06-14
 
@@ -11,17 +11,16 @@ Date: 2026-06-14
 1. Study Title
 ================================================================================
 
-When Knowledge Does Not Translate into Practice: Innovation Readiness as a Missing Capability Layer in Constrained Pharmaceutical Systems
-
+Intellectual Property Literacy, Innovation Readiness and Innovation Practice in Syria's Pharmaceutical Sector: A Cross-Sectional Study
 ================================================================================
 2. STUDY OVERVIEW
 ================================================================================
 
 2.1 Study Objectives
 Primary Objective:
-To characterize the empirical co-variation among intellectual property (IP) 
-literacy, innovation attitudes, innovation readiness, and reported innovation 
-practice in a transitional pharmaceutical system, and to assess the comparative 
+To characterize the empirical co-variation among intellectual property (IP)
+literacy, innovation attitudes, innovation readiness, and reported innovation
+practice within Syria's pharmaceutical sector, and to assess the comparative 
 descriptive contribution of readiness-oriented specifications beyond 
 knowledge–attitude formulations.
 
@@ -66,7 +65,7 @@ Analytical sample: N = 303
 3.5 Exclusion Criteria
 • Non-pharmacy educational background
 • Incomplete survey responses (>50% missing)
-• Duplicate submissions (checked via IP + timestamp)
+• Potential duplicate responses were assessed using survey metadata
 
 ================================================================================
 4. VARIABLES AND MEASUREMENT
@@ -96,8 +95,7 @@ or causal mechanisms.
 • Items: 4 binary readiness items (R1–R4)
 • Scoring: 0/1, summed, normalized to 0–100
 • Reliability: Cronbach's α = 0.507 (reported for transparency only)
-• Conceptual note: Treated as a proxy indicator of system-level enabling 
-  conditions, NOT as an individual capability construct or latent trait
+• Conceptual note: Treated as a Innovation readiness is treated as a proxy indicator of perceived innovation-enabling conditions.
 
 4.1.4 Innovation Practice Index (IPI)
 • Items: 3 binary practice items (P1–P3)
@@ -229,8 +227,7 @@ cross-sectional constraints; no causal, mediational, or hierarchical
 interpretation is implied.
 
 7.2 Proxy Indicator Framing
-Innovation readiness is treated as a proxy indicator of system-level enabling 
-conditions, NOT as a validated latent construct, causal mechanism, or 
+Innovation readiness is treated as a proxy indicator of perceived innovation-enabling conditions, NOT as a validated latent construct, causal mechanism, or 
 individual capability.
 
 7.3 Descriptive Model Improvement and Negative Explanatory Closure
@@ -259,6 +256,10 @@ limited portion of system-level determinants.
 8.3 Documentation Record
 • Supplementary Document S1: Transparent reporting record prepared post-analysis
 • Includes: Analysis decisions, sensitivity results, deviation log
+
+Data collection coincided with World Intellectual Property Day 2026 awareness activities conducted at Manara University. These activities were independent of the study design, were not implemented as an intervention, and were not evaluated analytically.
+
+The STROBE checklist and reproducibility materials are publicly available through the GitHub repository and permanently archived on Zenodo: https://doi.org/10.5281/zenodo.20716883. 
 
 ================================================================================
 9. LIMITATIONS AND CONSTRAINTS
@@ -307,8 +308,6 @@ calculations for data analysis. Am Stat. 2001;55(1):19-24.
 
 Principal Investigator: _________________________ Date: _______________
 
-Statistician: ___________________________________ Date: _______________
-
 ================================================================================
-END OF STATISTICAL ANALYSIS PLAN — VERSION 2.1 (FINAL)
+END OF STATISTICAL ANALYSIS PLAN — VERSION 1.0
 ================================================================================
