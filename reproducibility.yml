@@ -1,21 +1,26 @@
-name: Reproducibility Check
+name: Reproducibility and Data Integrity Check
 
 on:
   push:
     branches: [ main, master ]
+
   pull_request:
     branches: [ main, master ]
+
   workflow_dispatch:
 
 jobs:
-  test:
+  reproducibility:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         python-version: ['3.12']
 
     steps:
-    - uses: actions/checkout@v4
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
@@ -35,33 +40,74 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Verify script syntax
+      run: |
+        python -m py_compile code/Innovation_Capability_Analysis.py
+
     - name: Verify data integrity
       run: |
-        python -c "
+        python - <<'PYTHON'
         import pandas as pd
-        df = pd.read_csv('data/Deidentified_Dataset_N303.csv')
-        assert len(df) == 303, f'Expected 303 rows, got {len(df)}'
-        assert 'PILS' in df.columns, 'PILS column missing'
-        assert 'IAI' in df.columns, 'IAI column missing'
-        assert 'IRS' in df.columns, 'IRS column missing'
-        assert 'IPI' in df.columns, 'IPI column missing'
-        print(f'✅ Data integrity verified: N={len(df)}, columns OK')
-        "
 
-    - name: Run analysis script
-      run: |
-        python code/Innovation_Capability_Analysis.py           --data data/Deidentified_Dataset_N303.csv           --output results/
+        df = pd.read_csv("data/Deidentified_Dataset_N303.csv")
 
-    - name: Verify outputs
+        assert len(df) == 303, \
+            f"Expected 303 observations, found {len(df)}"
+
+        required_columns = [
+            "PILS",
+            "IAI",
+            "IRS",
+            "IPI"
+        ]
+
+        missing = [c for c in required_columns if c not in df.columns]
+
+        assert len(missing) == 0, \
+            f"Missing required columns: {missing}"
+
+        for col in required_columns:
+            assert df[col].notna().all(), \
+                f"Missing values detected in {col}"
+
+        print("✅ Dataset integrity verified")
+        print(f"✅ N = {len(df)}")
+        print(f"✅ Columns verified: {required_columns}")
+        PYTHON
+
+    - name: Run full analysis
       run: |
-        ls -la results/
+        mkdir -p results
+
+        python code/Innovation_Capability_Analysis.py \
+          --data data/Deidentified_Dataset_N303.csv \
+          --output results/
+
+    - name: Verify generated outputs
+      run: |
+        echo "Generated files:"
+        ls -lah results/
+
         test -f results/S2_descriptive_stats.csv
         test -f results/S4_correlation_matrix.csv
-        echo "✅ All outputs generated successfully"
 
-    - name: Upload results
-      uses: actions/upload-artifact@v4
+        echo "✅ Required outputs generated successfully"
+
+    - name: Upload reproducibility results
       if: always()
+      uses: actions/upload-artifact@v4
       with:
-        name: analysis-results
+        name: reproducibility-results
         path: results/
+
+    - name: Workflow summary
+      if: success()
+      run: |
+        echo "======================================="
+        echo "REPRODUCIBILITY CHECK PASSED"
+        echo "======================================="
+        echo "Dataset: Deidentified_Dataset_N303.csv"
+        echo "Sample size: N = 303"
+        echo "Python version: ${{ matrix.python-version }}"
+        echo "Analysis completed successfully"
+        echo "======================================="
