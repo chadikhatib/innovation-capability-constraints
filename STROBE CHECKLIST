@@ -1,10 +1,10 @@
 ================================================================================
 STROBE CHECKLIST — VERSION 1.0
 Cross-Sectional Studies — Version 4 (2021)
-When Knowledge Does Not Translate into Practice: Innovation Readiness as a Missing Capability Layer in Constrained Pharmaceutical Systems
+Intellectual Property Literacy, Innovation Readiness and Innovation Practice in Syria's Pharmaceutical Sector: A Cross-Sectional Study
 ================================================================================
 
-Document ID: STROBE-PIPRF-2026-001
+Document ID: STROBE-2026-001
 Version: 1.0
 Date: 2026-06-14
 Study Design: Cross-sectional observational survey
@@ -25,10 +25,8 @@ TITLE AND ABSTRACT
 ================================================================================
 
 Item 1a — Identification as cross-sectional study in title
-✅ REPORTED: Title explicitly states cross-sectional evidence: 
-"Innovation readiness as a missing capability layer in knowledge–practice 
-decoupling under institutional constraints: evidence from a transitional 
-pharmaceutical system"
+✅ REPORTED: Title explicitly identifies the study design:
+"Intellectual Property Literacy, Innovation Readiness and Innovation Practice in Syria's Pharmaceutical Sector: A Cross-Sectional Study"
 Location: Title
 
 Item 1b — Structured abstract with key information
@@ -66,7 +64,7 @@ Item 3a — Study design
 Location: Methods 2.1, 2.2
 
 Item 3b — Setting, locations, and dates
-✅ REPORTED: Setting: transitional economy. Dates: 10 March – 15 April 2026. 
+✅ REPORTED: Setting: Setting: Syria's pharmaceutical sector operating under resource and institutional constraints. Dates: 10 March – 15 April 2026. 
 Recruitment: professional networks, academic institutions, pharmaceutical 
 manufacturing facilities via Google Forms.
 Location: Methods 2.1, 2.2
@@ -100,15 +98,13 @@ Location: Methods 2.1; Discussion 4.3
 Item 6b — Study size
 ✅ REPORTED: Target: 400 invitations. Achieved: 303 complete responses 
 (75.8% response rate). No formal sample size calculation (exploratory 
-design). Post-hoc power sensitivity illustration provided in 
-Supplementary Figure S2 with explicit Hoenig & Heisey (2001) disclaimer.
-Location: Methods 2.1; Supplementary Figure S2
+design). 
+Location: Methods 2.1
 
 Item 7 — Quantitative variables
 ✅ REPORTED: All variables described with: mean, SD, range, skewness, 
 kurtosis. Item-level statistics in Supplementary Table S3. 
-Floor/ceiling effects in Supplementary Table S9.
-Location: Results 3.2; Supplementary Tables S3, S9
+Location: Results 3.2; Supplementary Tables S3
 
 Item 8 — Statistical methods
 ✅ REPORTED: Descriptive statistics, Pearson correlation (with 95% CIs 
@@ -168,8 +164,7 @@ Item 13 — Other analyses
 ✅ REPORTED: Convergent validity (Q10 vs PILS): Mann-Whitney U, 
 point-biserial r = 0.355 (Supplementary Table S8). Residual diagnostics: 
 Shapiro-Wilk, Breusch-Pagan, Durbin-Watson (Supplementary Table S6). 
-Item response distributions and floor/ceiling effects (Supplementary Table S9).
-Location: Results 3.7–3.8; Supplementary Tables S6, S8, S9
+Location: Results 3.7–3.8; Supplementary Tables S6, S8
 
 ================================================================================
 DISCUSSION
@@ -212,10 +207,9 @@ funding reported.
 Location: Competing Interests section
 
 Item 17 — Data availability
-✅ REPORTED: "Datasets and analysis code available from corresponding author 
-upon reasonable request. Analytical code deposited in public GitHub 
-repository prior to publication."
+✅ REPORTED: "De-identified data, analysis code, and reproducibility materials are publicly available through the GitHub repository and permanently archived on Zenodo."
 Location: Data Availability Statement
+STROBE checklist and reproducibility documentation are publicly available in the GitHub repository https://github.com/chadikhatib/innovation-capability-constraints and permanently archived on Zenodo https://doi.org/10.5281/zenodo.20716883. 
 
 Item 18 — Conflicts of interest
 ✅ REPORTED: "The authors declare no competing interests."
@@ -252,7 +246,7 @@ Documentation record prepared post-analysis (Supplementary Document S1).
 Location: Methods 2.2
 
 S4. Protocol availability
-⚠️ PARTIALLY REPORTED: No formal protocol published. SAP (v2.1) prepared 
+⚠️ PARTIALLY REPORTED: No formal protocol published. SAP (v1.0) prepared 
 post-hoc for transparency. Ethics approval: MU-URO-26-02.
 Location: Methods 2.1; SAP document
 
