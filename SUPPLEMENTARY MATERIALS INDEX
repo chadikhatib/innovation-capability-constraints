@@ -1,18 +1,18 @@
 ================================================================================
 SUPPLEMENTARY MATERIALS INDEX
-When Knowledge Does Not Translate into Practice: Innovation Readiness as a Missing Capability Layer in Constrained Pharmaceutical Systems
+Intellectual Property Literacy, Innovation Readiness and Innovation Practice in Syria's Pharmaceutical Sector: A Cross-Sectional Study
 ================================================================================
-
+Open Data, Open Code, and Reproducibility Package
 Date: 2026-06-14
 Version: 1.0.0
 ================================================================================
 PACKAGE CONTENTS
 ================================================================================
 
-1. SUPPLEMENTARY TABLES (S1–S9)
+1. SUPPLEMENTARY TABLES (S1–S8), & SUPPLEMENTARY FIGURE (S1, S2) 
 ────────────────────────────────────────────────────────────────────────────────
 
-Table S1: Participant Flow Diagram (STROBE-compliant)
+Table S1: Participant Flow and Analytical Sample Summary
    → Recruitment, eligibility, complete responses, missing data
    → File: Supplementary_Tables/Table_S1.txt
 
@@ -25,7 +25,7 @@ Table S3: Item-Level Descriptive Statistics
    → File: Supplementary_Tables/Table_S3.txt
 
 Table S4: Inter-Domain Pearson Correlations with 95% Confidence Intervals
-   → Pearson r with BCa confidence intervals (10,000 resamples)
+→ Pearson r with Fisher z-transformed 95% confidence intervals
    → File: Supplementary_Tables/Table_S4.txt
 
 Table S5: ANOVA Post-Hoc Comparisons (Tukey HSD)
@@ -44,7 +44,9 @@ Table S8: Convergent Validity: Self-Assessment (Q10) vs PILS
    → Self-assessed vs objective knowledge comparison
    → File: Supplementary_Tables/Table_S8.txt
 
-
+Figure S1: Participant Flow Diagram
+Figure S2. World Intellectual Property Day 2026 awareness campaign poster and outreach activities conducted at Manara University during the study period.
+  
 2. ANALYSIS CODE
 ────────────────────────────────────────────────────────────────────────────────
 
@@ -83,24 +85,7 @@ LICENSE
 DEPOSIT INSTRUCTIONS
 ================================================================================
 
-GitHub Repository:
-   1. Create repository: innovation-capability-constraints
-   2. Upload all files listed above
-   3. Add DOI badge after Zenodo integration
-   4. Enable GitHub Actions for reproducibility (optional)
-
-Zenodo Archive:
-   1. Link GitHub repository to Zenodo
-   2. Create release v1.0.0
-   3. Zenodo automatically generates DOI
-   4. Update CITATION.cff and README.md with DOI
-
-Data Availability Statement (for manuscript):
-   "The datasets generated and analyzed during the current study, along with 
-   the statistical analysis code and documentation record, are available 
-   in the public GitHub repository [URL] and archived on Zenodo [DOI]. 
-   The de-identified dataset (N=303) is provided in CSV format with synthetic 
-   participant IDs. All analysis code is released under the MIT License."
+The STROBE checklist and reproducibility materials are publicly available through the GitHub repository and permanently archived on Zenodo: https://doi.org/10.5281/zenodo.20716883. 
 
 ================================================================================
 QUALITY ASSURANCE CHECKLIST
@@ -116,7 +101,7 @@ QUALITY ASSURANCE CHECKLIST
 ✓ License specified (MIT)
 ✓ Citation metadata provided (CITATION.cff)
 ✓ README with usage instructions
-✓ Zenodo-ready (DOI placeholder)
+✓ Zenodo-ready (10.5281/zenodo.20716883)
 
 ================================================================================
 END OF INDEX
