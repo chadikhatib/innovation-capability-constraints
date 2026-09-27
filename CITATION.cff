@@ -1,47 +1,50 @@
 cff-version: 1.2.0
 
-message: "If you use this dataset or code, please cite both the article and the dataset."
+message: "If you use this dataset, analysis code, or reproducibility materials, please cite both the associated article and the Zenodo record."
 
 type: dataset
 
-title: "Innovation Capability under Institutional Constraints: De-identified Dataset and Analysis Code"
+title: "Dataset and Analysis Code for Bridging the Implementation Gap: Intellectual Property Literacy, Perceived Institutional Readiness, and Innovation Practice among Pharmaceutical Professionals in Post-Liberation Syria"
 
 authors:
-  - family-names: "Khatib"
-    given-names: "Chadi"
-    affiliation: "Faculty of Pharmacy, Manara University, Syria"
 
-  - family-names: "Alkozy"
-    given-names: "Hala"
-    affiliation: "Faculty of Pharmacy, Manara University, Syria"
+* family-names: "Khatib"
+  given-names: "Chadi"
+  affiliation: "Faculty of Pharmacy, Manara University, Syria"
 
-  - family-names: "Hamdan"
-    given-names: "Zainab"
-    affiliation: "Faculty of Pharmacy, Manara University, Syria"
+* family-names: "Alkozy"
+  given-names: "Hala"
+  affiliation: "Faculty of Pharmacy, Manara University, Syria"
 
-  - family-names: "Isber"
-    given-names: "May"
-    affiliation: "Faculty of Pharmacy, Manara University, Syria"
+* family-names: "Hamdan"
+  given-names: "Zainab"
+  affiliation: "Faculty of Pharmacy, Manara University, Syria"
 
-  - family-names: "Mlhem"
-    given-names: "Jawa"
-    affiliation: "Faculty of Pharmacy, Manara University, Syria"
+* family-names: "Isber"
+  given-names: "May"
+  affiliation: "Faculty of Pharmacy, Manara University, Syria"
 
-date-released: 2026-06-16
+* family-names: "Mlhem"
+  given-names: "Jawa"
+  affiliation: "Faculty of Pharmacy, Manara University, Syria"
 
-version: "2.3.6"
+date-released: 2026-09-28
+version: 1.0.0
+license: MIT
 
-license: "MIT"
-
-doi: "10.5281/zenodo.20716882"
+doi: 10.5281/zenodo.20716882
 
 repository-code: "https://github.com/chadikhatib/innovation-capability-constraints"
 
 keywords:
-  - innovation systems
-  - intellectual property literacy
-  - innovation readiness
-  - pharmaceutical innovation
-  - institutional constraints
-  - transitional economies
-  - cross-sectional study
+
+* intellectual property literacy
+* innovation readiness
+* innovation practice
+* pharmaceutical innovation
+* pharmaceutical sector
+* Syria
+* innovation capacity
+* entrepreneurship
+* pharmaceutical education
+* cross-sectional study
