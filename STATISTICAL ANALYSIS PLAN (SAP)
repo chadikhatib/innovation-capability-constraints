@@ -1,53 +1,57 @@
 ================================================================================
 STATISTICAL ANALYSIS PLAN (SAP) — VERSION 1.0 (FINAL)
-Study: Bridging the Implementation Gap: Intellectual Property Literacy, Perceived Institutional Readiness, and Innovation Practice among Pharmaceutical Professionals in Post-Liberation Syria
-Target Journal: Journal of Intellectual Property Rights (JIPR)
-Document ID: SAP-JIPR-2026-V1.0
-Date: 2026-09-27
+Study: Pharmaceutical Innovation in Syria: Readiness and Practice Gaps
+Target Journal: Eastern Mediterranean Health Journal (EMHJ - WHO EMRO)
+Document ID: SAP-EMHJ-2026-V1.0
+Date: 2026-10-10
 ================================================================================
 
 1. ADMINISTRATIVE & PROTOCOL INFORMATION
 --------------------------------------------------------------------------------
 1.1 Study Title:
-Bridging the Implementation Gap: Intellectual Property Literacy, Perceived Institutional Readiness, and Innovation Practice among Pharmaceutical Professionals in Post-Liberation Syria
+Pharmaceutical Innovation in Syria: Readiness and Practice Gaps
+(A Cross-Sectional Study of Knowledge, Preparedness, and Implementation Gaps)
 
 1.2 Principal Investigator & Institutional Affiliation:
-Dr. Chadi Khatib, Department of Pharmacognosy, Faculty of Pharmacy, Manara University, Syria.
+Dr. Chadi Khatib, Department of Pharmaceutical Sciences, Faculty of Pharmacy, Manara University, Syria.
 
-1.3 Ethical Approval:
+1.3 Co-Investigators:
+Dr. Hala Alkozy, Dr. Zainab Hamdan, Dr. May Isber, Dr. Jawa Mlhem (Faculty of Pharmacy, Manara University).
+
+1.4 Ethical Approval:
 Manara University Institutional Review Board (IRB Approval No. MU-URO-26-02). Electronic informed consent secured at platform entry.
 
-1.4 Study Design:
-Cross-sectional, observational, quantitative policy-oriented survey.
+1.5 Study Design & Policy Context:
+Cross-sectional, observational, quantitative policy-oriented survey aligned with WHO Global Strategy on Human Resources for Health (Workforce 2030) and FIP Development Goals (Goal 4 & Goal 20).
 
-2. STUDY OBJECTIVES & HYPOTHESES
+2. STUDY OBJECTIVES & ANALYTICAL QUESTIONS
 --------------------------------------------------------------------------------
 2.1 Primary Objective:
-To characterize the empirical relationships among IP literacy, professional innovation attitudes, perceived institutional readiness, and reported innovation practices among pharmaceutical personnel in post-liberation Syria (N = 303).
+To evaluate the empirical relationships among IP literacy, professional innovation attitudes, perceived institutional readiness, and reported innovation practice participation among pharmacy personnel in post-conflict Syria (N = 303).
 
-2.2 Formal Hypotheses:
-- Hypothesis 1 (H1): Professional attitudes toward IP and innovation (IAI) show high baseline endorsement but remain statistically decoupled from reported innovation practice (IPI), demonstrating a substantial attitudinal-implementation gap.
-- Hypothesis 2 (H2): Innovation readiness (IRS), conceptualized as a descriptive proxy for perceived institutional enabling conditions, exhibits structural floor effects that mirror the depression in reported innovation practice, consistent with macro-institutional operational constraints.
-- Hypothesis 3 (H3): Reported innovation practice remains uniformly low across undergraduate students, practicing pharmacists, and academic researchers, demonstrating a structural floor effect without significant group variation.
+2.2 Core Analytical Questions:
+- Question 1: Is high attitudinal endorsement of innovation translated into active practice participation, or does a significant implementation gap exist?
+- Question 2: Do individual knowledge, attitudes, or perceived institutional readiness statistically predict innovation practice participation when controlling for demographic and professional sectors?
+- Question 3: Are there significant differences in innovation practice participation across professional sectors (undergraduate students, academic researchers, practicing pharmacists)?
 
 3. SAMPLE SPECIFICATION & DEMOGRAPHICS (N = 303)
 --------------------------------------------------------------------------------
-3.1 Sample Size & Verification:
-A total of 303 verified complete responses obtained from 400 distributed electronic invitations (75.83% response rate). Single-response restriction enforced via IP and browser tracking.
+3.1 Sample Size & Complete Case Analysis:
+A total of 303 verified complete responses obtained from 400 distributed invitations (75.75% response rate). Single-response restriction enforced via IP and browser tracking. Missing values: 0 (100% complete case analysis).
 
-3.2 Sample Profile:
-- Gender: Female = 215 (70.96%), Male = 88 (29.04%).
-- Professional Category: Undergraduate Students = 224 (73.93%), Academic/Graduate Researchers = 54 (17.82%), Practicing Pharmacists = 25 (8.25%).
+3.2 Sample Stratification:
+- Gender: Female (Gender=1) = 215 (70.96%), Male (Gender=0) = 88 (29.04%).
+- Professional Sector: Undergraduate Pharmacy Students = 224 (73.93%), Academic/Graduate Researchers = 54 (17.82%), Practicing Pharmacists = 25 (8.25%).
 - Experience Level: <1 Year = 80 (26.40%), 1–5 Years = 153 (50.50%), 6–10 Years = 45 (14.85%), >10 Years = 25 (8.25%).
 
 4. VARIABLE OPERATIONALIZATION (FORMATIVE COMPOSITE INDICES)
 --------------------------------------------------------------------------------
-All constructs are conceptualized as Formative Composite Indices (FCIs) normalized to a 0–100 scale:
-1. PILS_pct: Pharmaceutical IP Literacy Score (9 binary objective legal items, K2–K10).
-2. IAI_pct: Intellectual Property Attitude Index (10 Likert items, A1–A10, reverse coding for A2, A5).
+All core constructs are operationalized as Formative Composite Indices (FCIs) normalized to a 0–100 scale:
+1. PILS_pct: IP Literacy Score (9 binary objective legal items, K2–K10).
+2. IAI_pct: Attitudinal Endorsement Index (10 Likert items, A1–A10, reverse coding for A2, A5).
 3. IRS_pct: Perceived Institutional Readiness Score (4 Likert items on TTOs, legal support, funding, R&D infrastructure, R1–R4).
-4. IPI_pct: Innovation Practice Index (3 behavioral items on patents, R&D participation, technology transfer, P1–P3).
-5. Diagnostic_Gap: Arithmetic difference (IAI_pct - IPI_pct).
+4. IPI_pct: Innovation Practice Participation Score (3 behavioral items on patents, R&D, tech transfer, P1–P3).
+5. Diagnostic_Gap: Implementation Diagnostic Gap (IAI_pct - IPI_pct).
 
 5. STATISTICAL METHODOLOGY & ANALYTICAL PIPELINE
 --------------------------------------------------------------------------------
@@ -57,16 +61,16 @@ Python 3.12 utilizing Pandas, NumPy, SciPy, and Statsmodels packages.
 5.2 Descriptive Statistics & Zero-Inflation Diagnostics:
 Calculation of Mean, SD, Median, IQR, Min, Max, Skewness, and exact count/percentage of zero scores to quantify floor effects.
 
-5.3 Bivariate Correlation Analysis:
-Non-parametric Spearman rank correlation coefficients (r_s) with Holm-Bonferroni correction for multiple comparisons to account for non-normality and bounded 0–100 distributions.
+5.3 Sectoral Group Comparisons:
+Primary Non-parametric Test: Kruskal-Wallis H-test across professional sectors (Students, Researchers, Pharmacists).
+Secondary Parametric Test: One-way Analysis of Variance (ANOVA) F-test.
 
-5.4 Sectoral Group Comparisons:
-One-way Analysis of Variance (ANOVA) and non-parametric Kruskal-Wallis test across professional categories (Students, Academics, Pharmacists) with effect size metrics (eta^2).
+5.4 Bivariate Correlation Analysis:
+Non-parametric Spearman rank correlation matrix (r_s) with exact p-values across core domains (PILS, IAI, IRS, IPI).
 
 5.5 Multivariable Predictive Modeling (Handling Zero-Inflation):
-- Tobit Regression Model (Left-censored at 0): Maximum Likelihood Estimation (MLE) using GenericLikelihoodModel to account for 71.95% left-censoring in IPI.
-- Binary Logistic Regression: Two-part model predicting any practice participation (IPI > 0).
-- LOWESS Non-parametric Curve Estimation: Smooth locally weighted scatterplot regression to visualize threshold activation dynamics.
+- Stage 1 Primary Model: Binary Logistic Regression predicting any practice participation (IPI > 0) with Odds Ratios (95% CI) and p-values.
+- Stage 2 Secondary Model: Binomial Generalized Linear Model (GLM) modeling practice density (IPI_prop = IPI_count / 3) with Odds Ratios (95% CI) and p-values.
 
 6. ARCHIVING & REPRODUCIBILITY
 --------------------------------------------------------------------------------
