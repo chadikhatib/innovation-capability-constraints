@@ -3,7 +3,7 @@
 
 """
 ================================================================================
-MASTER ANALYTICAL PIPELINE (v1.0.0 FINAL)
+MASTER ANALYTICAL PIPELINE (v1.1.0 FINAL)
 ================================================================================
 Study Title:
   Pharmaceutical Innovation in Syria: Readiness and Practice Gaps
@@ -13,7 +13,7 @@ Target Journal:
 
 Open Science Specifications:
   - Dataset File: Deidentified_Dataset_N303.csv (N = 303 verified respondents)
-  - Permanent Zenodo Archive DOI: 10.5281/zenodo.20716882
+  - Permanent Zenodo Archive DOI: 10.5281/zenodo.23290550
   - Ethical Approval: Manara University IRB (Approval No. MU-URO-26-02)
   - Python Environment: Python 3.12+ (pandas, numpy, scipy, statsmodels)
 
@@ -37,7 +37,7 @@ def run_pipeline(data_path="/workspace/knowledge/Deidentified_Dataset_N303.csv",
         data_path = "Deidentified_Dataset_N303.csv"
         
     print("=" * 80)
-    print("EXECUTING MASTER ANALYTICAL PIPELINE (v1.0.0 FINAL)...")
+    print("EXECUTING MASTER ANALYTICAL PIPELINE (v1.1.0 FINAL)...")
     print("=" * 80)
     
     df = pd.read_csv(data_path)
@@ -96,39 +96,54 @@ def run_pipeline(data_path="/workspace/knowledge/Deidentified_Dataset_N303.csv",
     df['IPI_binary'] = (df['IPI_pct'] > 0).astype(int)
     logit_mod = smf.logit('IPI_binary ~ C(Category) + PILS_pct + IAI_pct + IRS_pct + Gender', data=df).fit(disp=False)
     
+    # Constructing Count Matrix for robust Binomial Family execution (Successes vs Failures out of 3 trials)
     df['IPI_count'] = np.round((df['IPI_pct'] / 100.0) * 3).astype(int)
-    df['IPI_prop'] = df['IPI_count'] / 3.0
-    glm_mod = smf.glm('IPI_prop ~ C(Category) + PILS_pct + IAI_pct + IRS_pct + Gender', data=df, family=sm.families.Binomial(), var_weights=np.full(len(df), 3.0)).fit()
+    df['Successes'] = df['IPI_count']
+    df['Failures'] = 3 - df['IPI_count']
     
-    predictors = ['Intercept', 'Academic/Researcher', 'Practicing Pharmacist', 'IP Literacy (PILS)', 'Attitudinal Endorsement (IAI)', 'Perceived Readiness (IRS)', 'Gender (Female=1)']
+    glm_mod = smf.glm('np.column_stack((Successes, Failures)) ~ C(Category) + PILS_pct + IAI_pct + IRS_pct + Gender', 
+                      data=df, family=sm.families.Binomial()).fit()
+    
+    # Mapping internal model terms explicitly to formal publication labels
+    predictor_mapping = {
+        'Intercept': 'Intercept',
+        'C(Category)[T.1]': 'Academic/Researcher (vs Student)',
+        'C(Category)[T.2]': 'Practicing Pharmacist (vs Student)',
+        'PILS_pct': 'IP Literacy Score (PILS)',
+        'IAI_pct': 'Attitudinal Endorsement Index (IAI)',
+        'IRS_pct': 'Perceived Institutional Readiness (IRS)',
+        'Gender': 'Gender (Female=1)'
+    }
     
     table4_rows = []
-    logit_or = np.exp(logit_mod.params.values)
-    logit_ci = np.exp(logit_mod.conf_int().values)
-    logit_p = logit_mod.pvalues.values
-    
-    glm_or = np.exp(glm_mod.params.values)
-    glm_ci = np.exp(glm_mod.conf_int().values)
-    glm_p = glm_mod.pvalues.values
-    
-    for i in range(len(predictors)):
-        table4_rows.append({
-            'Predictor': predictors[i],
-            'Logistic OR (95% CI)': f"{logit_or[i]:.3f} [{logit_ci[i,0]:.3f}–{logit_ci[i,1]:.3f}]",
-            'Logistic p': f"{logit_p[i]:.3f}",
-            'Binomial GLM OR (95% CI)': f"{glm_or[i]:.3f} [{glm_ci[i,0]:.3f}–{glm_ci[i,1]:.3f}]",
-            'Binomial GLM p': f"{glm_p[i]:.3f}"
-        })
+    for param_name, display_label in predictor_mapping.items():
+        if param_name in logit_mod.params:
+            l_or = np.exp(logit_mod.params[param_name])
+            l_ci = np.exp(logit_mod.conf_int().loc[param_name])
+            l_p = logit_mod.pvalues[param_name]
+            
+            g_or = np.exp(glm_mod.params[param_name])
+            g_ci = np.exp(glm_mod.conf_int().loc[param_name])
+            g_p = glm_mod.pvalues[param_name]
+            
+            table4_rows.append({
+                'Predictor': display_label,
+                'Logistic OR (95% CI)': f"{l_or:.3f} [{l_ci[0]:.3f}–{l_ci[1]:.3f}]",
+                'Logistic p': f"{l_p:.3f}",
+                'Binomial GLM OR (95% CI)': f"{g_or:.3f} [{g_ci[0]:.3f}–{g_ci[1]:.3f}]",
+                'Binomial GLM p': f"{g_p:.3f}"
+            })
+            
     table4_df = pd.DataFrame(table4_rows)
     print(table4_df.to_string(index=False))
     
-    # Export CSVs
+    # Export CSV outputs for replication confirmation
     os.makedirs(output_dir, exist_ok=True)
     fci_df.to_csv(os.path.join(output_dir, "fci_metrics_summary.csv"), index=False)
     rho_df.to_csv(os.path.join(output_dir, "spearman_correlation_matrix.csv"))
     table4_df.to_csv(os.path.join(output_dir, "multivariable_models_table4.csv"), index=False)
     
-    print("\nPipeline execution completed successfully.")
+    print("\nPipeline execution completed successfully. Certified Open-Science Outputs generated.")
 
 if __name__ == '__main__':
     run_pipeline()
