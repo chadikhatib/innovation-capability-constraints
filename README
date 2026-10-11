@@ -1,80 +1,64 @@
-    # Bridging the Implementation Gap: Intellectual Property Literacy, Perceived Institutional Readiness, and Innovation Practice among Pharmaceutical Professionals in Post-Liberation Syria
+    # Pharmaceutical Innovation in Syria: Readiness and Practice Gaps
 
-[!\[DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20716882.svg)](https://doi.org/10.5281/zenodo.20716882)
-[!\[License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[!\[Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
-[!\[Target Journal](https://img.shields.io/badge/Journal-JIPR-green.svg)](https://nopr.niscpr.res.in/handle/123456789/45)
+## Overview & Executive Summary
+This open-science reproducibility repository contains the complete dataset, statistical analysis plan, compliance checklists, and fully executable Python analytical codebase for the empirical study investigating **Pharmaceutical Innovation Readiness and Practice Gaps** among pharmacy students, academic researchers, and practicing pharmacists in Syria (N = 303).
 
-## Overview \& Executive Summary
-
-This open-science reproducibility repository contains the complete dataset, statistical analysis plan, compliance checklists, and fully executable Python audit code for the empirical study investigating the structural relationships among **Intellectual Property Literacy (PILS)**, **Innovation Attitudes (IAI)**, **Perceived Institutional Readiness (IRS)**, and **Innovation Practice (IPI)** among pharmaceutical professionals in post-liberation Syria ($N = 303$).
+The study is contextualized within the **WHO Global Strategy on Human Resources for Health (Workforce 2030)** and the **International Pharmaceutical Federation (FIP) Development Goals (Goal 4: Advanced Practice & Goal 20: Digital Health & Innovation)**.
 
 ### Key Empirical Findings
+1. **Attitudinal Decoupling & Passion-Practice Gap:** High professional endorsement of IP and innovation (IAI = 71.30 +/- 8.27%) is statistically decoupled from reported innovation practice (IPI = 10.45 +/- 17.91%), yielding a profound **Implementation Diagnostic Gap of 60.84 points** (r_s = -0.031, p = 0.587).
+2. **Severe Floor Effects & Multivariable Regression:** Operational constructs exhibited pronounced floor effects (48.51% zeros in IRS, 71.95% zeros in IPI). Multivariable regression models—including **Binary Logistic Regression** for practice participation (IPI > 0: OR_IRS = 0.992, 95% CI [0.979, 1.005], p = 0.242) and **Binomial GLM** (OR_IRS = 0.992, 95% CI [0.981, 1.003], p = 0.170)—confirmed that individual-level knowledge, attitudes, and perceived readiness do not statistically predict practice participation, highlighting systemic institutional bottlenecks.
+3. **Sectoral Floor Effect:** Practice participation remains uniformly depressed across professional sectors (Undergraduate Students: 11.01%, Academic Researchers: 9.88%, Practicing Pharmacists: 6.67%; Kruskal-Wallis H = 0.996, p = 0.608; One-Way ANOVA F = 0.694, p = 0.500).
 
-1. **Attitudinal Decoupling ($H\_1$ Confirmed):** High professional endorsement of IP and innovation ($\\text{IAI} = 71.30 \\pm 8.27%$) is statistically decoupled from reported innovation practice ($\\text{IPI} = 10.45 \\pm 17.91%$), yielding a massive **Diagnostic Gap of 60.84 points** ($r\_{s(\\text{IAI}, \\text{IPI})} = -0.031, p = 0.587$).
-2. **System-Wide Structural Constraints ($H\_2$ Supported):** Severe floor effects were observed in operational constructs ($48.51%$ zeros in IRS, $71.95%$ zeros in IPI). Multivariable Tobit regression (left-censored at 0 via Maximum Likelihood Estimation) confirmed that individual-level knowledge, attitudes, and perceived readiness fail to statistically predict practice participation ($\\beta\_{\\text{IRS}} = -0.231, p = 0.2101$), demonstrating that practice paralysis operates at a macro-institutional level.
-3. **Sectoral Floor Effect ($H\_3$ Confirmed):** Reported practice remains uniformly depressed across all professional categories (Undergraduate Students: $11.01%$, Academic Researchers: $9.88%$, Practicing Pharmacists: $6.67%$; ANOVA $F = 0.694, p = 0.5003$; Kruskal-Wallis $H = 0.996, p = 0.6078$).
+---
 
-\---
+## Repository Structure & File Index
 
-## Repository Structure \& File Index
+| File / Folder | Description |
+| :--- | :--- |
+| `reproducible_statistical_analysis.py` | Primary executable Python 3.12 script performing all data validation, FCIs calculation, Spearman correlations, Stage-1 Logistic regression, and Stage-2 Binomial GLM. |
+| `Deidentified_Dataset_N303.csv` | Complete de-identified dataset (N = 303, 40 variables) with synthetic participant IDs (`P001`–`P303`). |
+| `SAP_STATISTICAL_ANALYSIS_PLAN_v1.0.txt` | Formal Statistical Analysis Plan (v1.0) defining research questions, variable operationalization, and model specifications for EMHJ. |
+| `STROBE_CHECKLIST_v1.1.txt` | STROBE observational study compliance checklist (100% full compliance). |
+| `SUPPLEMENTARY_MATERIALS_INDEX.txt` | Index mapping supplementary tables (S1–S8) and visual figures (Figures 1, 2, 3). |
+| `requirements.txt` | Exact Python package version specifications. |
+| `CITATION.cff` | Machine-readable citation file format metadata. |
+| `LICENSE` | MIT Open Source License terms. |
 
-|File / Folder|Description|
-|-|-|
-|`reproducible\_statistical\_audit.py`|Primary executable Python 3.12 script performing all data validation, FCIs calculation, Spearman correlations, Tobit MLE regression, and Logistic regression.|
-|`Deidentified\_Dataset\_N303.csv`|Complete de-identified dataset ($N = 303$, 40 variables) with synthetic participant IDs (`P001`–`P303`).|
-|`SAP\_STATISTICAL\_ANALYSIS\_PLAN\_v1.0.txt`|Formal Statistical Analysis Plan (v1.0) defining hypotheses, variable operationalization, and model specifications.|
-|`STROBE\_CHECKLIST\_v1.1.txt`|STROBE observational study compliance checklist (95.5% full compliance).|
-|`SUPPLEMENTARY\_MATERIALS\_INDEX.txt`|Index mapping supplementary tables (S1–S8) and visual figures (Figures 1, 2, 3).|
-|`requirements.txt`|Exact Python package version specifications.|
-|`CITATION.cff`|Machine-readable citation file format metadata.|
-|`LICENSE`|MIT License terms for open-source code and data reuse.|
+---
 
-\---
+## Dataset Characteristics & Variable Dictionary (N = 303)
 
-## Dataset Characteristics \& Variable Dictionary ($N = 303$)
-
-The final analytical sample ($N = 303$) reflects verified responses collected between 10 March and 15 April 2026:
-
-* **Demographics:** Female: 215 ($70.96%$), Male: 88 ($29.04%$).
-* **Professional Categories:** Undergraduate Students ($n = 224, 73.93%$), Academic/Graduate Researchers ($n = 54, 17.82%$), Licensed Practicing Pharmacists ($n = 25, 8.25%$).
-* **Experience Levels:** $<1$ year ($26.40%$), 1–5 years ($50.50%$), 6–10 years ($14.85%$), $>10$ years ($8.25%$).
+The final analytical sample (N = 303) reflects verified responses collected between 10 March and 15 April 2026:
+- **Demographics:** Female (Gender = 1): 215 (70.96%), Male (Gender = 0): 88 (29.04%).
+- **Professional Categories:** Undergraduate Students (n = 224, 73.93%), Academic/Graduate Researchers (n = 54, 17.82%), Licensed Practicing Pharmacists (n = 25, 8.25%).
+- **Experience Levels:** <1 year (26.40%), 1–5 years (50.50%), 6–10 years (14.85%), >10 years (8.25%).
 
 ### Core Construct Specifications (Formative Composite Indices, 0–100 Scale)
+- `PILS_pct`: Pharmaceutical IP Literacy Score (9 objective binary legal items, Mean = 38.87 +/- 15.55%, Median = 44.44%).
+- `IAI_pct`: Intellectual Property Attitude Index (10 Likert items, Mean = 71.30 +/- 8.27%, Median = 72.50%).
+- `IRS_pct`: Perceived Institutional Readiness Score (4 Likert items on TTOs, funding, legal support; Mean = 17.82 +/- 20.35%, 48.51% zeros).
+- `IPI_pct`: Innovation Practice Index (3 behavioral items on patents, R&D, tech transfer; Mean = 10.45 +/- 17.91%, 71.95% zeros).
+- `Diagnostic_Gap`: Arithmetic difference (IAI_pct - IPI_pct, Mean = 60.84 +/- 19.93 points).
 
-* `PILS\_pct`: Pharmaceutical IP Literacy Score (9 objective binary legal items, Mean = $38.87 \\pm 15.55%$, Median = $44.44%$).
-* `IAI\_pct`: Intellectual Property Attitude Index (10 Likert items, Mean = $71.30 \\pm 8.27%$, Median = $72.50%$).
-* `IRS\_pct`: Perceived Institutional Readiness Score (4 Likert items on TTOs, funding, legal support; Mean = $17.82 \\pm 20.35%$, $48.51%$ zeros).
-* `IPI\_pct`: Innovation Practice Index (3 behavioral items on patents, R\&D, tech transfer; Mean = $10.45 \\pm 17.91%$, $71.95%$ zeros).
-* `Diagnostic\_Gap`: Arithmetic difference ($\\text{IAI\_pct} - \\text{IPI\_pct}$, Mean = $60.84 \\pm 19.93$ points).
-
-\---
+---
 
 ## Instructions for Reproduction
 
 To reproduce all tables, statistics, and regression models in the manuscript:
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/chadikhatib/innovation-capability-constraints.git
-cd innovation-capability-constraints
+1. Install required dependencies:
+   `pip install -r requirements.txt`
 
-# 2. Install required dependencies
-pip install -r requirements.txt
+2. Execute the reproducible statistical analysis codebase:
+   `python reproducible_statistical_analysis.py`
 
-# 3. Execute the reproducible statistical audit script
-python reproducible\_statistical\_audit.py
-```
+---
 
-\---
+## Ethical Compliance & Citation
 
-## Ethical Compliance \& Citation
-
-* **IRB Ethical Approval:** Formal approval granted by the Institutional Review Board (IRB) of Manara University, Syria (Approval No. `MU-URO-26-02`).
-* **Data Archiving:** Permanently archived on Zenodo (DOI: [10.5281/zenodo.20716882](https://doi.org/10.5281/zenodo.20716882)).
-* **Citation:**
-
-> Khatib, C. et al. (2026). \*Bridging the Implementation Gap: Intellectual Property Literacy, Perceived Institutional Readiness, and Innovation Practice among Pharmaceutical Professionals in Post-Liberation Syria\*. Journal of Intellectual Property Rights (JIPR). Dataset \& Code Repository: https://doi.org/10.5281/zenodo.20716882.
-
-
+- **IRB Ethical Approval:** Formal approval granted by the Institutional Review Board (IRB) of Manara University, Syria (Approval No. `MU-URO-26-02`).
+- **Data Archiving:** Permanently archived on Zenodo (DOI: 10.5281/zenodo.20716882).
+- **Citation:**
+  > Khatib, C., Alkozy, H., Hamdan, Z., Isber, M., & Mlhem, J. (2026). *Pharmaceutical Innovation in Syria: Readiness and Practice Gaps*. Eastern Mediterranean Health Journal (EMHJ / WHO EMRO). Dataset & Code Repository.
     
