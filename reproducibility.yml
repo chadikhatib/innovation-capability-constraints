@@ -219,11 +219,9 @@ def execute_regression_models(df):
     print("TABLE 4: MULTIVARIABLE MODELS OF REPORTED INNOVATION PRACTICE")
     print("-" * 80)
     
-    # Stage 1: Logistic setup
     df['IPI_binary'] = (df['IPI_pct'] > 0).astype(int)
     logit_mod = smf.logit('IPI_binary ~ C(Category) + PILS_pct + IAI_pct + IRS_pct + Gender', data=df).fit(disp=False)
     
-    # Stage 2: Binomial Count setup
     df['IPI_count'] = np.round((df['IPI_pct'] / 100.0) * 3).astype(int)
     df['Successes'] = df['IPI_count']
     df['Failures'] = 3 - df['IPI_count']
@@ -245,3 +243,5 @@ def execute_regression_models(df):
     for param_name, display_label in predictor_mapping.items():
         if param_name in logit_mod.params:
             l_or = np.exp(logit_mod.params[param_name])
+            l_ci = np.exp(logit_mod.conf_int().loc[param_name])
+            l_p = logit_mod.pvalues[param_name]
