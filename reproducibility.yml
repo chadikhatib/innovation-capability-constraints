@@ -1,20 +1,20 @@
-    #!/usr/bin/env python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
 ================================================================================
-REPRODUCIBLE STATISTICAL ANALYSIS CODEBASE (EMHJ REVISED)
+REPRODUCIBLE STATISTICAL ANALYSIS CODEBASE (EMHJ REVISED - v1.2.0)
 ================================================================================
 Study Title:
-  Pharmaceutical Innovation in Syria: Readiness and Practice Gaps
-  (A Cross-Sectional Study of Knowledge, Preparedness, and Implementation Gaps)
+  Pharmaceutical Innovation in Syria: Readiness and Practice Gaps among 
+  Pharmacy Students, Academics and Practitioners
 
 Target Journal:
   Eastern Mediterranean Health Journal (EMHJ - World Health Organization EMRO)
 
 Specifications:
   - Dataset File: Deidentified_Dataset_N303.csv (N = 303 verified respondents)
-  - Permanent Zenodo Archive DOI: 10.5281/zenodo.20716882
+  - Permanent Zenodo Archive DOI: 10.5281/zenodo.23290550
   - Ethical Approval: Manara University IRB (Approval No. MU-URO-26-02)
   - Python Environment: Python 3.12+ (pandas, numpy, scipy, statsmodels)
 
@@ -44,7 +44,9 @@ def load_and_verify_data(data_path):
     Loads dataset and verifies structural integrity, sample size, and missingness.
     """
     if not os.path.exists(data_path):
-        raise FileNotFoundError(f"Dataset not found at specified path: {data_path}")
+        data_path = "Deidentified_Dataset_N303.csv"
+        if not os.path.exists(data_path):
+            raise FileNotFoundError(f"Dataset not found at specified path: {data_path}")
     
     df = pd.read_csv(data_path)
     print("=" * 80)
@@ -57,7 +59,7 @@ def load_and_verify_data(data_path):
     
     # Required columns check
     req_cols = ['Participant_ID', 'Gender', 'Category', 'Experience_Level', 
-                'PILS_pct', 'IAI_pct', 'IRS_pct', 'IPI_pct', 'Diagnostic_Gap', 'IPI_raw']
+                'PILS_pct', 'IAI_pct', 'IRS_pct', 'IPI_pct', 'Diagnostic_Gap']
     missing_cols = [c for c in req_cols if c not in df.columns]
     if missing_cols:
         raise ValueError(f"Missing required analytical columns: {missing_cols}")
@@ -69,7 +71,6 @@ def load_and_verify_data(data_path):
 def analyze_demographics(df):
     """
     Calculates exact frequency and percentage distributions for sample demographics.
-    Gender Encoding in Dataset: 1 = Female (n=215, 70.96%), 0 = Male (n=88, 29.04%).
     """
     print("-" * 80)
     print("TABLE 1: DEMOGRAPHIC & PROFESSIONAL PROFILE (N = 303)")
@@ -92,7 +93,7 @@ def analyze_demographics(df):
     print()
     # Gender
     gender_counts = df['Gender'].value_counts()
-    for code in [1, 0]:
+    for code in:
         label = gender_map[code]
         cnt = gender_counts.get(code, 0)
         pct = (cnt / len(df)) * 100
@@ -115,7 +116,7 @@ def analyze_demographics(df):
 def analyze_fci_domains(df):
     """
     Computes descriptive statistics, central tendency, dispersion, skewness, 
-    and floor effects (% zeros) for Formative Composite Indices, including Diagnostic_Gap.
+    and floor effects (% zeros) for Formative Composite Indices.
     """
     print("-" * 80)
     print("TABLE 2: FORMATIVE COMPOSITE INDICES (FCIs) & FLOOR EFFECTS ASSESSMENT")
@@ -166,8 +167,7 @@ def analyze_fci_domains(df):
 
 def analyze_group_differences(df):
     """
-    Executes Kruskal-Wallis H-test (primary non-parametric) and One-Way ANOVA (secondary sensitivity)
-    across professional categories (Students, Researchers, Pharmacists).
+    Executes Kruskal-Wallis H-test and One-Way ANOVA across professional categories.
     """
     print("-" * 80)
     print("GROUP DIFFERENCE TESTS ACROSS PROFESSIONAL CATEGORIES")
@@ -177,9 +177,7 @@ def analyze_group_differences(df):
     academics = df[df['Category'] == 1]['IPI_pct']
     pharmacists = df[df['Category'] == 2]['IPI_pct']
     
-    # Kruskal-Wallis (Primary)
     h_stat, p_kw = stats.kruskal(students, academics, pharmacists)
-    # ANOVA (Secondary Sensitivity)
     f_stat, p_anova = stats.f_oneway(students, academics, pharmacists)
     
     print("IPI Innovation Practice Score Distributions by Sector:")
@@ -189,148 +187,61 @@ def analyze_group_differences(df):
     print()
     print(f"Primary Test   (Kruskal-Wallis H-test) : H(2) = {h_stat:.4f}, p-value = {p_kw:.4f}")
     print(f"Secondary Test (One-Way ANOVA F-test)  : F(2, {len(df)-3}) = {f_stat:.4f}, p-value = {p_anova:.4f}")
-    print("Conclusion: No statistically significant practice differences across professional categories.")
     print("-" * 80 + "\n")
     
-    return {'KW_H': h_stat, 'KW_p': p_kw, 'ANOVA_F': f_stat, 'ANOVA_p': p_anova}
+    return pd.DataFrame([{'Test': 'Kruskal-Wallis H', 'Statistic': h_stat, 'p-value': p_kw},
+                         {'Test': 'One-Way ANOVA F', 'Statistic': f_stat, 'p-value': p_anova}])
 
 
 def analyze_correlations(df):
     """
-    Computes Spearman rank correlation matrix across primary FCIs (excluding Diagnostic_Gap
-    to prevent part-whole mathematical coupling).
+    Computes Spearman rank correlation matrix across primary FCIs.
     """
     print("-" * 80)
-    print("TABLE 3: SPEARMAN RANK CORRELATION MATRIX & P-VALUES")
+    print("TABLE 3: BIVARIATE SPEARMAN RANK CORRELATION MATRIX (r_s)")
     print("-" * 80)
+    core_cols = ['PILS_pct', 'IAI_pct', 'IRS_pct', 'IPI_pct']
+    rho_mat, p_mat = stats.spearmanr(df[core_cols])
     
-    cols = ['PILS_pct', 'IAI_pct', 'IRS_pct', 'IPI_pct']
-    labels = ['PILS', 'IAI', 'IRS', 'IPI']
-    
-    rho_matrix, p_matrix = stats.spearmanr(df[cols])
-    
-    rho_df = pd.DataFrame(rho_matrix, index=labels, columns=labels).round(3)
-    p_df = pd.DataFrame(p_matrix, index=labels, columns=labels).round(4)
-    
-    print("Spearman Correlation Coefficients (r_s):")
-    print(rho_df)
-    print("\nP-Values:")
-    print(p_df)
-    
-    # Key focal correlations
-    print("\nFocal Relationship Summary:")
-    r_iai_ipi, p_iai_ipi = stats.spearmanr(df['IAI_pct'], df['IPI_pct'])
-    r_pils_irs, p_pils_irs = stats.spearmanr(df['PILS_pct'], df['IRS_pct'])
-    
-    print(f"  - r_s(IAI, IPI)  = {r_iai_ipi:.3f} (p = {p_iai_ipi:.4f}) -> Uncorrelated Passion vs. Practice")
-    print(f"  - r_s(PILS, IRS) = {r_pils_irs:.3f} (p = {p_pils_irs:.4f}) -> Uncorrelated Literacy vs. Readiness")
-    
+    rho_df = pd.DataFrame(rho_mat, index=['PILS', 'IAI', 'IRS', 'IPI'], columns=['PILS', 'IAI', 'IRS', 'IPI']).round(3)
+    print("Correlation Coefficients (Rho):")
+    print(rho_df.to_string())
     print("-" * 80 + "\n")
-    return rho_df, p_df
+    return rho_df
 
 
-def fit_multivariable_models(df):
+def execute_regression_models(df):
     """
-    Fits Stage 1 Binary Logistic Regression (IPI > 0) and Stage 2 Binomial GLM (IPI Practice Intensity).
-    Uses clean, exact predictor labels matching manuscript Table 4.
+    Runs multivariable regression analyses: Stage-1 Binary Logistic Regression 
+    and Stage-2 Multivariable Binomial GLM with explicit parameter mapping.
     """
     print("-" * 80)
-    print("TABLE 4: MULTIVARIABLE REGRESSION MODELS (LOGISTIC & BINOMIAL GLM)")
+    print("TABLE 4: MULTIVARIABLE MODELS OF REPORTED INNOVATION PRACTICE")
     print("-" * 80)
     
-    # 1. Stage 1: Binary Logistic Regression (IPI > 0 Participation)
+    # Stage 1: Logistic setup
     df['IPI_binary'] = (df['IPI_pct'] > 0).astype(int)
     logit_mod = smf.logit('IPI_binary ~ C(Category) + PILS_pct + IAI_pct + IRS_pct + Gender', data=df).fit(disp=False)
     
-    logit_ci = logit_mod.conf_int()
+    # Stage 2: Binomial Count setup
+    df['IPI_count'] = np.round((df['IPI_pct'] / 100.0) * 3).astype(int)
+    df['Successes'] = df['IPI_count']
+    df['Failures'] = 3 - df['IPI_count']
     
-    # 2. Stage 2: Binomial GLM for Count Practice Intensity (IPI_raw out of 3 trials)
-    df['IPI_prop'] = df['IPI_raw'] / 3.0
-    glm_mod = smf.glm('IPI_prop ~ C(Category) + PILS_pct + IAI_pct + IRS_pct + Gender',
-                      data=df,
-                      family=sm.families.Binomial(),
-                      freq_weights=np.ones(len(df)) * 3).fit()
+    glm_mod = smf.glm('np.column_stack((Successes, Failures)) ~ C(Category) + PILS_pct + IAI_pct + IRS_pct + Gender', 
+                      data=df, family=sm.families.Binomial()).fit()
     
-    glm_ci = glm_mod.conf_int()
+    predictor_mapping = {
+        'Intercept': 'Intercept',
+        'C(Category)[T.1]': 'Academic/Researcher (vs Student)',
+        'C(Category)[T.2]': 'Practicing Pharmacist (vs Student)',
+        'PILS_pct': 'IP Literacy Score (PILS)',
+        'IAI_pct': 'Attitudinal Endorsement Index (IAI)',
+        'IRS_pct': 'Perceived Institutional Readiness (IRS)',
+        'Gender': 'Gender (Female=1)'
+    }
     
-    # Clean concise labels matching manuscript Table 4
-    predictor_labels = [
-        'Intercept',
-        'Academic/Researcher',
-        'Practicing Pharmacist',
-        'IP Literacy (PILS)',
-        'Attitudinal Endorsement (IAI)',
-        'Perceived Readiness (IRS)',
-        'Gender (Female=1)'
-    ]
-    
-    table4_data = []
-    for idx, label in enumerate(predictor_labels):
-        # Logistic
-        log_or = np.exp(logit_mod.params.iloc[idx])
-        log_l = np.exp(logit_ci.iloc[idx, 0])
-        log_u = np.exp(logit_ci.iloc[idx, 1])
-        log_p = logit_mod.pvalues.iloc[idx]
-        
-        # Binomial GLM
-        glm_or = np.exp(glm_mod.params.iloc[idx])
-        glm_l = np.exp(glm_ci.iloc[idx, 0])
-        glm_u = np.exp(glm_ci.iloc[idx, 1])
-        glm_p = glm_mod.pvalues.iloc[idx]
-        
-        table4_data.append({
-            'Predictor': label,
-            'Logistic OR (95% CI)': f"{log_or:.3f} [{log_l:.3f}–{log_u:.3f}]",
-            'Logistic p': f"{log_p:.3f}",
-            'Binomial GLM OR (95% CI)': f"{glm_or:.3f} [{glm_l:.3f}–{glm_u:.3f}]",
-            'Binomial GLM p': f"{glm_p:.3f}"
-        })
-        
-    table4_df = pd.DataFrame(table4_data)
-    print(table4_df.to_string(index=False))
-    print("-" * 80 + "\n")
-    
-    return table4_df
-
-
-def export_summary_reports(df, demo_df, fci_df, rho_df, table4_df, output_dir="/workspace/scratch"):
-    """
-    Exports clean CSV files for automated auditing and publication archiving.
-    """
-    os.makedirs(output_dir, exist_ok=True)
-    
-    demo_df.to_csv(os.path.join(output_dir, "demographics_summary.csv"), index=False)
-    fci_df.to_csv(os.path.join(output_dir, "fci_metrics_summary.csv"), index=False)
-    rho_df.to_csv(os.path.join(output_dir, "spearman_correlation_matrix.csv"))
-    table4_df.to_csv(os.path.join(output_dir, "multivariable_models_table4.csv"), index=False)
-    
-    print(f"All analytical summary CSVs exported successfully to: {output_dir}/")
-
-
-def main():
-    """
-    Main execution pipeline.
-    """
-    data_path = "/workspace/knowledge/Deidentified_Dataset_N303.csv"
-    if not os.path.exists(data_path):
-        data_path = "Deidentified_Dataset_N303.csv"
-        
-    print("STARTING REPRODUCIBLE STATISTICAL ANALYSIS PIPELINE...")
-    df = load_and_verify_data(data_path)
-    demo_df = analyze_demographics(df)
-    fci_df = analyze_fci_domains(df)
-    group_res = analyze_group_differences(df)
-    rho_df, p_df = analyze_correlations(df)
-    table4_df = fit_multivariable_models(df)
-    
-    export_summary_reports(df, demo_df, fci_df, rho_df, table4_df)
-    
-    print("=" * 80)
-    print("REPRODUCIBLE STATISTICAL PIPELINE COMPLETED WITH 100% PRECISION.")
-    print("=" * 80)
-
-
-if __name__ == '__main__':
-    main()
-
-    
+    table4_rows = []
+    for param_name, display_label in predictor_mapping.items():
+        if param_name in logit_mod.params:
+            l_or = np.exp(logit_mod.params[param_name])
