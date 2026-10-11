@@ -1,37 +1,47 @@
 ================================================================================
 SUPPLEMENTARY MATERIALS INDEX — OPEN SCIENCE REPRODUCIBILITY PACKAGE
-Study: Pharmaceutical Innovation in Syria: Readiness and Practice Gaps
+Study: Pharmaceutical Innovation in Syria: Readiness and Practice Gaps 
+       among Pharmacy Students, Academics and Practitioners
 Target Journal: Eastern Mediterranean Health Journal (EMHJ - WHO EMRO)
-Permanent Zenodo Archive DOI: 10.5281/zenodo.20716882
+Permanent Zenodo Archive DOI: 10.5281/zenodo.23290550
 ================================================================================
 
 1. REPRODUCIBLE ANALYSIS CODE
 ────────────────────────────────────────────────────────────────────────────────
 - reproducible_statistical_analysis.py
-  Primary executable Python 3.12 script executing data verification, FCI calculations, Spearman correlation matrix, Kruskal-Wallis group comparisons, Binary Logistic Regression, and Binomial GLM.
-  File: Code/reproducible_statistical_analysis.py
+  Primary executable Python 3.12 script executing data verification, FCI calculations, 
+  Spearman correlation matrix, Kruskal-Wallis group comparisons, Binary Logistic 
+  Regression, and Binomial GLM.
+  Location: Repository Root Directory
 
 - reproducible_statistical_audit.py
   Secondary audit script for automated computational verification.
-  File: Code/reproducible_statistical_audit.py
+  Location: Repository Root Directory
 
-- Innovation_Capability_Analysis_v1.0.0_FINAL.py
-  Master analytical pipeline script generating summary CSV reports.
-  File: Code/Innovation_Capability_Analysis_v1.0.0_FINAL.py
+- Innovation_Capability_Analysis_v1.1.0_FINAL.py
+  Master analytical pipeline script executing robust statsmodels mapping and generating 
+  certified open-science summary CSV outputs.
+  Location: Repository Root Directory
 
 2. DE-IDENTIFIED DATASET
 ────────────────────────────────────────────────────────────────────────────────
 - Deidentified_Dataset_N303.csv
-  Complete analytical dataset (N = 303 participants, 40 variables) with synthetic participant IDs (P001–P303) and normalized composite scores.
-  File: Data/Deidentified_Dataset_N303.csv
+  Complete analytical dataset (N = 303 participants, 40 variables) with synthetic 
+  participant IDs (P001–P303) and normalized composite scores.
+  Location: Repository Root Directory
 
 3. REPOSITORY & DOCUMENTATION FILES
 ────────────────────────────────────────────────────────────────────────────────
-- README.md: Repository overview, setup instructions, variable dictionary, and ethical statement.
-- SAP_STATISTICAL_ANALYSIS_PLAN_v1.0.txt: Formal Statistical Analysis Plan.
-- STROBE_CHECKLIST_v1.1.txt: STROBE observational study compliance checklist.
-- reproducibility.yml: GitHub Actions CI workflow configuration.
-- requirements.txt: Python dependency version constraints.
-- CITATION.cff: Machine-readable citation file.
-- LICENSE: MIT Open Source License terms.
+- README.md: Repository overview, reproduction pipeline, variable specifications, 
+  and explicit ethical compliance statements.
+- SAP_STATISTICAL_ANALYSIS_PLAN_v1.1.txt: Formal Statistical Analysis Plan defining 
+  research questions and multivariable count model specifications.
+- STROBE_CHECKLIST_v1.2.txt: STROBE cross-sectional observational study compliance 
+  checklist (100% full reporting compliance achieved).
+- reproducibility.yml: GitHub Actions continuous integration (CI) environment build logs.
+- requirements.txt: Python dependency and package version constraints for exact execution.
+- CITATION.cff: Machine-readable citation file format metadata for cross-referencing.
+- LICENSE: MIT Open Source License terms protecting author copyrights.
+================================================================================
+END OF SUPPLEMENTARY MATERIALS INDEX
 ================================================================================
