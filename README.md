@@ -68,6 +68,6 @@ Execution steps for full statistical audit and table reproduction:
 
 ## 5. Ethical Compliance & Archival
 * **IRB Ethical Approval:** Formal approval granted by the Institutional Review Board (IRB) of Manara University, Syria (Approval No. MU-URO-26-02).
-* **Data Archiving:** Permanently archived on Zenodo (DOI: [10.5281/zenodo.23290550](https://doi.org)).
+* **Data Archiving:** Permanently archived on Zenodo (DOI: [10.5281/zenodo.20716882](https://doi.org)).
 * **Standard Citation:**
-  Khatib, C., Alkozy, H., Hamdan, Z., Isber, M., & Mlhem, J. (2026). *Pharmaceutical Innovation in Syria: Readiness and Practice Gaps*. Eastern Mediterranean Health Journal (EMHJ / WHO EMRO). Dataset & Code Repository. DOI: 10.5281/zenodo.23290550.
+  Khatib, C., Alkozy, H., Hamdan, Z., Isber, M., & Mlhem, J. (2026). *Pharmaceutical Innovation in Syria: Readiness and Practice Gaps*. Eastern Mediterranean Health Journal (EMHJ / WHO EMRO). Dataset & Code Repository. DOI: 10.5281/zenodo.20716882.
