@@ -22,7 +22,7 @@ authors:
 date-released: "2026-10-11"
 version: 1.1.0
 license: MIT
-doi: "10.5281/zenodo.20716882"
+doi: "10.5281/zenodo.23290550"
 repository-code: "https://github.com/chadikhatib/innovation-capability-constraints"
 keywords:
   - "intellectual property literacy"
@@ -32,6 +32,24 @@ keywords:
   - "pharmaceutical sector"
   - "Syria"
   - "innovation capacity"
-  - "entrepreneurship"
+  - "implementation gap"
+  - "health-system resilience"
   - "pharmaceutical education"
   - "cross-sectional study"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Khatib"
+      given-names: "Chadi"
+    - family-names: "Alkozy"
+      given-names: "Hala"
+    - family-names: "Hamdan"
+      given-names: "Zainab"
+    - family-names: "Isber"
+      given-names: "May"
+    - family-names: "Mlhem"
+      given-names: "Jawa"
+  title: "Pharmaceutical Innovation in Syria: Readiness and Practice Gaps"
+  journal: "Eastern Mediterranean Health Journal"
+  year: 2026
+  publisher: "WHO Regional Office for the Eastern Mediterranean"
