@@ -37,7 +37,7 @@ def run_pipeline(data_path="/workspace/knowledge/Deidentified_Dataset_N303.csv",
         data_path = "Deidentified_Dataset_N303.csv"
         
     print("=" * 80)
-    print("EXECUTING MASTER ANALYTICAL PIPELINE (v1.1.0 FINAL)...")
+    print("EXECUTING MASTER ANALYTICAL PIPELINE (v2.4.1 FINAL)...")
     print("=" * 80)
     
     df = pd.read_csv(data_path)
@@ -128,9 +128,9 @@ def run_pipeline(data_path="/workspace/knowledge/Deidentified_Dataset_N303.csv",
             
             table4_rows.append({
                 'Predictor': display_label,
-                'Logistic OR (95% CI)': f"{l_or:.3f} [{l_ci[0]:.3f}–{l_ci[1]:.3f}]",
+                'Logistic OR (95% CI)': f"{l_or:.3f} [{l_ci.iloc[0]:.3f}–{l_ci.iloc[1]:.3f}]",
                 'Logistic p': f"{l_p:.3f}",
-                'Binomial GLM OR (95% CI)': f"{g_or:.3f} [{g_ci[0]:.3f}–{g_ci[1]:.3f}]",
+                'Binomial GLM OR (95% CI)': f"{g_or:.3f} [{g_ci.iloc[0]:.3f}–{g_ci.iloc[1]:.3f}]",
                 'Binomial GLM p': f"{g_p:.3f}"
             })
             
