@@ -3,7 +3,7 @@
 
 """
 ================================================================================
-MASTER ANALYTICAL PIPELINE (v1.1.0 FINAL)
+MASTER ANALYTICAL PIPELINE (v2.4.1 FINAL RELEASE)
 ================================================================================
 Study Title:
   Pharmaceutical Innovation in Syria: Readiness and Practice Gaps
@@ -13,7 +13,7 @@ Target Journal:
 
 Open Science Specifications:
   - Dataset File: Deidentified_Dataset_N303.csv (N = 303 verified respondents)
-  - Permanent Zenodo Archive DOI: 10.5281/zenodo.23290550
+  - Permanent Zenodo Archive DOI: 10.5281/zenodo.20716882
   - Ethical Approval: Manara University IRB (Approval No. MU-URO-26-02)
   - Python Environment: Python 3.12+ (pandas, numpy, scipy, statsmodels)
 
