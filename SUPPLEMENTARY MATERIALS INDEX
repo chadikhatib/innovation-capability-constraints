@@ -3,7 +3,7 @@ SUPPLEMENTARY MATERIALS INDEX — OPEN SCIENCE REPRODUCIBILITY PACKAGE
 Study: Pharmaceutical Innovation in Syria: Readiness and Practice Gaps 
        among Pharmacy Students, Academics and Practitioners
 Target Journal: Eastern Mediterranean Health Journal (EMHJ - WHO EMRO)
-Permanent Zenodo Archive DOI: 10.5281/zenodo.23290550
+Permanent Zenodo Archive DOI: 10.5281/zenodo.20716882
 ================================================================================
 
 1. REPRODUCIBLE ANALYSIS CODE
@@ -18,7 +18,7 @@ Permanent Zenodo Archive DOI: 10.5281/zenodo.23290550
   Secondary audit script for automated computational verification.
   Location: Repository Root Directory
 
-- Innovation_Capability_Analysis_v1.1.0_FINAL.py
+- Innovation_Capability_Analysis_v2.4.1_FINAL.py
   Master analytical pipeline script executing robust statsmodels mapping and generating 
   certified open-science summary CSV outputs.
   Location: Repository Root Directory
@@ -34,9 +34,9 @@ Permanent Zenodo Archive DOI: 10.5281/zenodo.23290550
 ────────────────────────────────────────────────────────────────────────────────
 - README.md: Repository overview, reproduction pipeline, variable specifications, 
   and explicit ethical compliance statements.
-- SAP_STATISTICAL_ANALYSIS_PLAN_v1.1.txt: Formal Statistical Analysis Plan defining 
+- SAP_STATISTICAL_ANALYSIS_PLAN_v2.4.1.txt: Formal Statistical Analysis Plan defining 
   research questions and multivariable count model specifications.
-- STROBE_CHECKLIST_v1.2.txt: STROBE cross-sectional observational study compliance 
+- STROBE_CHECKLIST_v2.4.1.txt: STROBE cross-sectional observational study compliance 
   checklist (100% full reporting compliance achieved).
 - reproducibility.yml: GitHub Actions continuous integration (CI) environment build logs.
 - requirements.txt: Python dependency and package version constraints for exact execution.
