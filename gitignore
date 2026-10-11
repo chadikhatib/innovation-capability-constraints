@@ -1,39 +1,57 @@
-# Python Runtime
+# ==============================================================================
+# .gitignore — REPRODUCIBILITY PLATFORM CONFIGURATION (v1.1.0 FINAL)
+# Project: Pharmaceutical Innovation in Syria: Readiness and Practice Gaps
+# ==============================================================================
+
+# Python Runtime & Compiled Artifacts
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+*.pyo
+*.pyd
 
-# Virtual Environments
+# Virtual Environments (Local Build Sandbox)
 env/
 venv/
 ENV/
 .venv/
-
-# Build & Distribution
 build/
 dist/
 *.egg-info/
 .installed.cfg
 *.egg
+.eggs/
 
-# IDEs & Editors
+# IDEs, Editors & Project Metadata
 .idea/
 .vscode/
 *.swp
 *.swo
 *~
+.project
+.pydevproject
 
-# Operating System Metadata
+# Operating System Metadata (Garbage Collection)
 .DS_Store
 Thumbs.db
+ehthumbs.db
+Desktop.ini
 
-# Output & Scratch Buffers
+# Output, Cache & Scratch Buffers
 scratch/
 tmp/
 *.log
+.cache/
 
-# Raw & Proprietary Data
+# Pipeline-Generated Data Outputs (Preventing Accidental Duplication)
+# Only final de-identified source code and data remain tracked
+fci_metrics_summary.csv
+spearman_correlation_matrix.csv
+multivariable_models_table4.csv
+
+# Raw & Proprietary Safeguards
 raw_data/
 confidential/
+*.secret
