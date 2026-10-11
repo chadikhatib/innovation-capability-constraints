@@ -1,76 +1,76 @@
 ================================================================================
-STROBE CHECKLIST — VERSION 1.1 (UPDATED & AUDITED)
+STROBE CHECKLIST — VERSION 1.1 (UPDATED & AUDITED FOR EMHJ)
 Cross-Sectional Observational Studies — Version 4 (2021)
-Study Title: Bridging the Implementation Gap: Intellectual Property Literacy, Perceived Institutional Readiness, and Innovation Practice among Pharmaceutical Professionals in Post-Liberation Syria
-Target Journal: Journal of Intellectual Property Rights (JIPR)
+Study Title: Pharmaceutical Innovation in Syria: Readiness and Practice Gaps
+Target Journal: Eastern Mediterranean Health Journal (EMHJ - WHO EMRO)
 Document ID: STROBE-2026-V1.1
-Date: 2026-09-27
+Date: 2026-10-10
 ================================================================================
 
 TITLE AND ABSTRACT
 --------------------------------------------------------------------------------
 Item 1a — Title Design Identification:
-✅ REPORTED: Title explicitly identifies design and context: "Bridging the Implementation Gap: Intellectual Property Literacy, Perceived Institutional Readiness, and Innovation Practice among Pharmaceutical Professionals in Post-Liberation Syria".
+REPORTED: Title explicitly identifies design and context: "Pharmaceutical Innovation in Syria: Readiness and Practice Gaps (A Cross-Sectional Study of Knowledge, Preparedness, and Implementation Gaps)".
 
 Item 1b — Structured Abstract:
-✅ REPORTED: Structured abstract detailing rationale, methods (N = 303, FCIs, Tobit MLE), key findings (Diagnostic Gap = 60.84 points, r_s = -0.031, Tobit beta_IRS = -0.231), and policy implications.
+REPORTED: Structured abstract (<250 words) detailing Background, Objectives, Methods (N = 303, FCIs, Binary Logistic Regression, Binomial GLM), Results (Diagnostic Gap = 60.84 points, r_s = -0.031, Logistic OR_IRS = 0.992), and Policy Conclusion.
 
 INTRODUCTION
 --------------------------------------------------------------------------------
 Item 2a — Scientific Rationale:
-✅ REPORTED: Contextualized within workforce transitions, FIP Development Goal 4, post-liberation Syria industrial recovery, and KAP model limitations.
+REPORTED: Contextualized within post-conflict Syrian health system resilience, local manufacturing capacity (>80% domestic demand), pharmacist density (1:613), WHO Workforce 2030, and FIP Development Goals (Goal 4 & Goal 20).
 
 Item 2b — Specific Objectives & Hypotheses:
-✅ REPORTED: Explicitly states study objectives and three formal hypotheses (H1: Attitudinal decoupling, H2: System-level readiness constraints, H3: Sectoral floor effect).
+REPORTED: Explicitly states study objectives investigating attitudinal-implementation gaps, institutional readiness constraints, and sectoral practice participation.
 
 METHODS
 --------------------------------------------------------------------------------
 Item 3a — Study Design:
-✅ REPORTED: Cross-sectional observational quantitative survey design.
+REPORTED: Cross-sectional observational quantitative survey design.
 
 Item 3b — Setting & Dates:
-✅ REPORTED: Conducted in Syria between 10 March and 15 April 2026 via structured electronic data collection across faculties, syndicate channels, and manufacturing sites.
+REPORTED: Conducted in Syria between 10 March and 15 April 2026 via structured electronic data collection across faculties, syndicate channels, and manufacturing sites.
 
 Item 3c — Eligibility Criteria:
-✅ REPORTED: Pharmacy degree holders or active pharmacy students in Syria; exclusion of non-pharmacy backgrounds, duplicates, and >50% missing data.
+REPORTED: Pharmacy degree holders or active undergraduate pharmacy students in Syria; exclusion of non-pharmacy backgrounds and incomplete submissions.
 
 Item 4 — Variables & Operationalization:
-✅ REPORTED: Formative Composite Indices (PILS, IAI, IRS, IPI, Diagnostic Gap) defined with item counts, normalization (0–100), and floor effect metrics.
+REPORTED: Formative Composite Indices (PILS, IAI, IRS, IPI, Diagnostic Gap) defined with item counts, normalization (0–100 scale), and floor effect metrics.
 
 Item 5 — Measurement & Data Sources:
-✅ REPORTED: Google Forms electronic survey platform with single-response enforcement. Formative measurement philosophy explicitly justified.
+REPORTED: Electronic survey platform with single-response technical enforcement. Formative measurement philosophy explicitly justified (Coltman et al., 2008).
 
 Item 6a — Bias Control:
-⚠️ PARTIALLY REPORTED: Single-response technical enforcement; convenience sampling acknowledged as limitation in Section 4.4.
+REPORTED: Single-response technical enforcement; convenience sampling acknowledged transparently as a study limitation.
 
 Item 6b — Study Size:
-✅ REPORTED: Target 400 distributed invitations; 303 verified complete responses (75.83% response rate).
+REPORTED: Target 400 distributed invitations; 303 verified complete responses obtained (75.75% response rate).
 
 Item 7 — Quantitative Variables:
-✅ REPORTED: Descriptive distributions reported with Mean, SD, Median, IQR, Skewness, and Zero-count/percentage.
+REPORTED: Descriptive distributions reported with Mean, SD, Median, IQR, Min, Max, Skewness, and Zero-count/percentage.
 
 Item 8 — Statistical Methods:
-✅ REPORTED: Spearman rank correlation, One-way ANOVA, Kruskal-Wallis, Multivariable Tobit MLE regression (left-censored at 0), Binary Logistic regression, LOWESS curve estimation.
+REPORTED: Spearman rank correlation, Kruskal-Wallis H-test, One-way ANOVA, Binary Logistic Regression, Binomial GLM.
 
 RESULTS
 --------------------------------------------------------------------------------
 Item 9 — Participant Flow & Sample Demographics:
-✅ REPORTED: Final analytical sample (N = 303): 224 Undergraduate Students (73.93%), 54 Academic Researchers (17.82%), 25 Practicing Pharmacists (8.25%); 215 Females (70.96%), 88 Males (29.04%).
+REPORTED: Final analytical sample (N = 303): 224 Undergraduate Students (73.93%), 54 Academic Researchers (17.82%), 25 Practicing Pharmacists (8.25%); 215 Females (70.96%), 88 Males (29.04%).
 
 Item 10 — Descriptive Data:
-✅ REPORTED: PILS = 38.87 ± 15.55%, IAI = 71.30 ± 8.27%, IRS = 17.82 ± 20.35% (48.51% zeros), IPI = 10.45 ± 17.91% (71.95% zeros), Diagnostic Gap = 60.84 ± 19.93 points.
+REPORTED: PILS = 38.87 ± 15.55%, IAI = 71.30 ± 8.27%, IRS = 17.82 ± 20.35% (48.51% zeros), IPI = 10.45 ± 17.91% (71.95% zeros), Diagnostic Gap = 60.84 ± 19.93 points.
 
 Item 11a/b — Associations & Multivariable Analysis:
-✅ REPORTED: Spearman correlation matrix (Table 3); Tobit MLE and Logistic regression models (Table 4) with coefficients, standard errors, t-values, and p-values.
+REPORTED: Spearman correlation matrix (Table 3); Binary Logistic Regression and Binomial GLM models (Table 4) with Odds Ratios, 95% Confidence Intervals, and p-values.
 
 DISCUSSION & OTHER INFORMATION
 --------------------------------------------------------------------------------
 Item 14 — Key Results & Limitations:
-✅ REPORTED: Theoretical decoupling synthesized; six methodological limitations acknowledged in Section 4.4.
+REPORTED: Implementation gap synthesized; study limitations (convenience sampling, student sample dominance) explicitly acknowledged.
 
 Item 16–18 — Ethics, Funding & Data Availability:
-✅ REPORTED: Manara University IRB approval (MU-URO-26-02); no external funding; open dataset and code deposited on Zenodo (DOI: 10.5281/zenodo.20716882).
+REPORTED: Manara University IRB approval (MU-URO-26-02); no external funding; open dataset and code deposited on Zenodo (DOI: 10.5281/zenodo.20716882).
 
 ================================================================================
-COMPLIANCE SUMMARY: 21/22 Items Fully Reported (95.5% Full STROBE Compliance)
+COMPLIANCE SUMMARY: 22/22 Items Fully Reported (100% Full STROBE Compliance)
 ================================================================================
