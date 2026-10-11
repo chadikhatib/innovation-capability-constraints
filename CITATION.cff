@@ -4,13 +4,14 @@ message: "If you use this dataset, analysis code, or reproducibility materials, 
 
 type: dataset
 
-title: "Dataset and Analysis Code for Bridging the Implementation Gap: Intellectual Property Literacy, Perceived Institutional Readiness, and Innovation Practice among Pharmaceutical Professionals in Post-Liberation Syria"
+title: "Dataset and Analysis Code for Pharmaceutical Innovation in Syria: Readiness and Practice Gaps"
 
 authors:
 
 * family-names: "Khatib"
   given-names: "Chadi"
   affiliation: "Faculty of Pharmacy, Manara University, Syria"
+  orcid: "https://orcid.org/0000-0002-4061-1506"
 
 * family-names: "Alkozy"
   given-names: "Hala"
@@ -28,8 +29,8 @@ authors:
   given-names: "Jawa"
   affiliation: "Faculty of Pharmacy, Manara University, Syria"
 
-date-released: 2026-09-28
-version: 1.0.0
+date-released: 2026-10-11
+version: 1.1.0
 license: MIT
 
 doi: 10.5281/zenodo.20716882
