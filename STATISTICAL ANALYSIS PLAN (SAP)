@@ -1,57 +1,75 @@
 ================================================================================
-STATISTICAL ANALYSIS PLAN (SAP) — VERSION 1.0 (FINAL)
-Study: Pharmaceutical Innovation in Syria: Readiness and Practice Gaps
+STATISTICAL ANALYSIS PLAN (SAP) — VERSION 1.1 (FINAL)
+Study: Pharmaceutical Innovation in Syria: Readiness and Practice Gaps 
+       among Pharmacy Students, Academics and Practitioners
 Target Journal: Eastern Mediterranean Health Journal (EMHJ - WHO EMRO)
-Document ID: SAP-EMHJ-2026-V1.0
-Date: 2026-10-10
+Document ID: SAP-EMHJ-2026-V1.1
+Date: 2026-10-11
 ================================================================================
 
 1. ADMINISTRATIVE & PROTOCOL INFORMATION
 --------------------------------------------------------------------------------
 1.1 Study Title:
-Pharmaceutical Innovation in Syria: Readiness and Practice Gaps
-(A Cross-Sectional Study of Knowledge, Preparedness, and Implementation Gaps)
+Pharmaceutical Innovation in Syria: Readiness and Practice Gaps among 
+Pharmacy Students, Academics and Practitioners
 
 1.2 Principal Investigator & Institutional Affiliation:
-Dr. Chadi Khatib, Department of Pharmaceutical Sciences, Faculty of Pharmacy, Manara University, Syria.
+Dr. Chadi Khatib, Department of Pharmaceutical Sciences, Faculty of Pharmacy, 
+Manara University, Syria.
 
 1.3 Co-Investigators:
-Dr. Hala Alkozy, Dr. Zainab Hamdan, Dr. May Isber, Dr. Jawa Mlhem (Faculty of Pharmacy, Manara University).
+Dr. Hala Alkozy, Dr. Zainab Hamdan, Dr. May Isber, Dr. Jawa Mlhem 
+(Faculty of Pharmacy, Manara University).
 
 1.4 Ethical Approval:
-Manara University Institutional Review Board (IRB Approval No. MU-URO-26-02). Electronic informed consent secured at platform entry.
+Manara University Institutional Review Board (IRB Approval No. MU-URO-26-02). 
+Electronic informed consent secured at platform entry.
 
 1.5 Study Design & Policy Context:
-Cross-sectional, observational, quantitative policy-oriented survey aligned with WHO Global Strategy on Human Resources for Health (Workforce 2030) and FIP Development Goals (Goal 4 & Goal 20).
+Cross-sectional, observational, quantitative policy-oriented survey aligned with 
+WHO Global Strategy on Human Resources for Health (Workforce 2030) and 
+FIP Development Goals (Goal 4 & Goal 20).
 
 2. STUDY OBJECTIVES & ANALYTICAL QUESTIONS
 --------------------------------------------------------------------------------
 2.1 Primary Objective:
-To evaluate the empirical relationships among IP literacy, professional innovation attitudes, perceived institutional readiness, and reported innovation practice participation among pharmacy personnel in post-conflict Syria (N = 303).
+To evaluate the empirical relationships among IP literacy, professional innovation 
+attitudes, perceived institutional readiness, and reported innovation practice 
+participation among pharmacy personnel in post-conflict Syria (N = 303).
 
 2.2 Core Analytical Questions:
-- Question 1: Is high attitudinal endorsement of innovation translated into active practice participation, or does a significant implementation gap exist?
-- Question 2: Do individual knowledge, attitudes, or perceived institutional readiness statistically predict innovation practice participation when controlling for demographic and professional sectors?
-- Question 3: Are there significant differences in innovation practice participation across professional sectors (undergraduate students, academic researchers, practicing pharmacists)?
+- Question 1: Is high attitudinal endorsement of innovation translated into active 
+  practice participation, or does a significant implementation gap exist?
+- Question 2: Do individual knowledge, attitudes, or perceived institutional readiness 
+  statistically predict innovation practice participation when controlling for 
+  demographic and professional sectors?
+- Question 3: Are there significant differences in innovation practice participation 
+  across professional sectors (undergraduate students, academic researchers, 
+  practicing pharmacists)?
 
 3. SAMPLE SPECIFICATION & DEMOGRAPHICS (N = 303)
 --------------------------------------------------------------------------------
 3.1 Sample Size & Complete Case Analysis:
-A total of 303 verified complete responses obtained from 400 distributed invitations (75.75% response rate). Single-response restriction enforced via IP and browser tracking. Missing values: 0 (100% complete case analysis).
+A total of 303 verified complete responses obtained from 400 distributed invitations 
+(75.75% response rate). Single-response restriction enforced via IP and browser tracking. 
+Missing values: 0 (100% complete case analysis).
 
 3.2 Sample Stratification:
 - Gender: Female (Gender=1) = 215 (70.96%), Male (Gender=0) = 88 (29.04%).
-- Professional Sector: Undergraduate Pharmacy Students = 224 (73.93%), Academic/Graduate Researchers = 54 (17.82%), Practicing Pharmacists = 25 (8.25%).
-- Experience Level: <1 Year = 80 (26.40%), 1–5 Years = 153 (50.50%), 6–10 Years = 45 (14.85%), >10 Years = 25 (8.25%).
+- Professional Sector: Undergraduate Pharmacy Students = 224 (73.93%), 
+  Academic/Graduate Researchers = 54 (17.82%), Practicing Pharmacists = 25 (8.25%).
+- Experience Level: <1 Year = 80 (26.40%), 1–5 Years = 153 (50.50%), 
+  6–10 Years = 45 (14.85%), >10 Years = 25 (8.25%).
 
 4. VARIABLE OPERATIONALIZATION (FORMATIVE COMPOSITE INDICES)
 --------------------------------------------------------------------------------
-All core constructs are operationalized as Formative Composite Indices (FCIs) normalized to a 0–100 scale:
+All core constructs are operationalized as Formative Composite Indices (FCIs) 
+normalized to a 0–100 scale:
 1. PILS_pct: IP Literacy Score (9 binary objective legal items, K2–K10).
 2. IAI_pct: Attitudinal Endorsement Index (10 Likert items, A1–A10, reverse coding for A2, A5).
-3. IRS_pct: Perceived Institutional Readiness Score (4 Likert items on TTOs, legal support, funding, R&D infrastructure, R1–R4).
-4. IPI_pct: Innovation Practice Participation Score (3 behavioral items on patents, R&D, tech transfer, P1–P3).
-5. Diagnostic_Gap: Implementation Diagnostic Gap (IAI_pct - IPI_pct).
+3. IRS_pct: Perceived Institutional Readiness Score (4 objective binary items on TTOs, legal support, funding, R&D infrastructure, R1–R4).
+4. IPI_pct: Innovation Practice Participation Score (3 behavioral binary items on patents, R&D, tech transfer, P1–P3).
+5. Diagnostic_Gap: Implementation Diagnostic Gap arithmetic difference (IAI_pct - IPI_pct).
 
 5. STATISTICAL METHODOLOGY & ANALYTICAL PIPELINE
 --------------------------------------------------------------------------------
@@ -59,22 +77,28 @@ All core constructs are operationalized as Formative Composite Indices (FCIs) no
 Python 3.12 utilizing Pandas, NumPy, SciPy, and Statsmodels packages.
 
 5.2 Descriptive Statistics & Zero-Inflation Diagnostics:
-Calculation of Mean, SD, Median, IQR, Min, Max, Skewness, and exact count/percentage of zero scores to quantify floor effects.
+Calculation of Mean, SD, Median, IQR, Min, Max, Skewness, and exact count/percentage 
+of zero scores to quantify floor effects.
 
 5.3 Sectoral Group Comparisons:
-Primary Non-parametric Test: Kruskal-Wallis H-test across professional sectors (Students, Researchers, Pharmacists).
+Primary Non-parametric Test: Kruskal-Wallis H-test across professional sectors 
+(Students, Researchers, Pharmacists).
 Secondary Parametric Test: One-way Analysis of Variance (ANOVA) F-test.
 
 5.4 Bivariate Correlation Analysis:
-Non-parametric Spearman rank correlation matrix (r_s) with exact p-values across core domains (PILS, IAI, IRS, IPI).
+Non-parametric Spearman rank correlation matrix (r_s) with exact p-values across 
+core domains (PILS, IAI, IRS, IPI).
 
 5.5 Multivariable Predictive Modeling (Handling Zero-Inflation):
-- Stage 1 Primary Model: Binary Logistic Regression predicting any practice participation (IPI > 0) with Odds Ratios (95% CI) and p-values.
-- Stage 2 Secondary Model: Binomial Generalized Linear Model (GLM) modeling practice density (IPI_prop = IPI_count / 3) with Odds Ratios (95% CI) and p-values.
+- Stage 1 Primary Model: Binary Logistic Regression predicting any practice 
+  participation (IPI > 0) with Odds Ratios (95% CI) and p-values.
+- Stage 2 Secondary Model: Binomial Generalized Linear Model (GLM) modeling 
+  practice density via a joint (Successes, Failures) count vector based on the 3 
+  binary indicators, with Odds Ratios (95% CI) and p-values.
 
 6. ARCHIVING & REPRODUCIBILITY
 --------------------------------------------------------------------------------
-Code and data deposited under Zenodo DOI: 10.5281/zenodo.20716882.
+Code and data deposited under Zenodo DOI: 10.5281/zenodo.23290550.
 ================================================================================
 END OF STATISTICAL ANALYSIS PLAN
 ================================================================================
